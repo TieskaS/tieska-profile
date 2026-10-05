@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tieska Mirfatus Sholekah — PTIK UNNES</title>
-
-    <meta name="description" content="Portfolio pribadi Tieska Mirfatus Sholekah, mahasiswa Pendidikan Teknik Informatika dan Komputer UNNES.">
+    <title>Tieska Mirfatus Sholekah | PTIK UNNES</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,73 +12,91 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --bg: #f7f9fc;
-            --white: #ffffff;
-            --text: #142033;
-            --muted: #687386;
-            --blue: #315efb;
-            --blue-dark: #1839a5;
-            --blue-soft: #eaf0ff;
-            --line: #e4e9f2;
-            --lavender: #f1efff;
-            --shadow: 0 20px 60px rgba(35, 54, 90, 0.10);
-        }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: "DM Sans", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
+            background: #f7f9fc;
+            color: #142033;
+            line-height: 1.7;
+        }
+
+        :root {
+            --bg: #f7f9fc;
+            --white: #ffffff;
+            --text: #142033;
+            --muted: #687386;
+
+            --blue: #315efb;
+            --blue-dark: #1839a5;
+            --blue-soft: #eaf0ff;
+
+            --lavender: #f1efff;
+
+            --line: #e4e9f2;
+
+            --shadow:
+                0 20px 60px rgba(35, 54, 90, 0.10);
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
+        }
+
+        section {
+            padding: 110px 8%;
         }
 
         .container {
-            width: min(1160px, 90%);
+            max-width: 1200px;
             margin: auto;
         }
 
-        /* ================= NAVBAR ================= */
+
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
             position: fixed;
-            top: 18px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(1100px, 92%);
+            top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(228, 233, 242, 0.7);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+
+            height: 78px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 14px 20px;
-
-            background: rgba(255,255,255,0.78);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border: 1px solid rgba(255,255,255,0.9);
-            border-radius: 18px;
-
-            box-shadow: 0 10px 40px rgba(30,50,90,.08);
+            padding: 0 8%;
         }
 
         .logo {
-            font-weight: 800;
-            letter-spacing: 1px;
-            font-size: 17px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: -0.5px;
         }
 
         .logo span {
@@ -89,90 +105,96 @@
 
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 32px;
             list-style: none;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--muted);
         }
 
         .nav-links a {
-            transition: .3s ease;
+            font-size: 14px;
+            font-weight: 600;
+            color: #536074;
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
             color: var(--blue);
         }
 
-        /* ================= HERO ================= */
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
-            position: relative;
-            padding-top: 100px;
+
+            padding-top: 150px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 15%,
+                    rgba(49, 94, 251, 0.09),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(144, 126, 255, 0.10),
+                    transparent 30%
+                ),
+                var(--bg);
+
             overflow: hidden;
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 650px;
-            height: 650px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #dce7ff, #f0edff);
-            filter: blur(2px);
-            top: -250px;
-            right: -180px;
-            z-index: -2;
-        }
+        .hero-content {
+            max-width: 1200px;
+            margin: auto;
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            background: #e8f6ff;
-            bottom: -180px;
-            left: -100px;
-            z-index: -2;
-        }
+            width: 100%;
 
-        .hero-grid {
             display: grid;
-            grid-template-columns: 1.15fr .85fr;
+            grid-template-columns: 1.1fr 0.9fr;
+
+            gap: 80px;
             align-items: center;
-            gap: 70px;
         }
 
-        .eyebrow {
+        .hero-label {
             display: inline-flex;
             align-items: center;
-            gap: 9px;
+            gap: 10px;
 
             color: var(--blue);
-            font-weight: 700;
-            font-size: 12px;
-            letter-spacing: 1.8px;
 
-            margin-bottom: 20px;
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            margin-bottom: 24px;
         }
 
-        .eyebrow::before {
+        .hero-label::before {
             content: "";
-            width: 30px;
+            width: 35px;
             height: 2px;
             background: var(--blue);
         }
 
         .hero h1 {
             font-family: "Playfair Display", serif;
-            font-size: clamp(55px, 7vw, 100px);
-            line-height: .92;
+
+            font-size: clamp(55px, 7vw, 90px);
+
+            line-height: 0.98;
+
             letter-spacing: -4px;
-            margin-bottom: 25px;
+
+            margin-bottom: 28px;
         }
 
         .hero h1 span {
@@ -180,39 +202,39 @@
             font-style: italic;
         }
 
-        .hero-subtitle {
-            font-size: 19px;
-            line-height: 1.7;
-            max-width: 650px;
-            color: var(--muted);
-            margin-bottom: 30px;
-        }
+        .hero-description {
+            max-width: 620px;
 
-        .hero-subtitle strong {
-            color: var(--text);
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 38px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 13px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 21px;
-            border-radius: 12px;
+            padding: 14px 24px;
+
+            border-radius: 100px;
+
             font-size: 14px;
             font-weight: 700;
-            transition: .3s ease;
+
+            transition: 0.3s;
         }
 
         .btn-primary {
             background: var(--blue);
             color: white;
-            box-shadow: 0 12px 25px rgba(49,94,251,.22);
+
+            box-shadow:
+                0 12px 25px rgba(49, 94, 251, 0.22);
         }
 
         .btn-primary:hover {
@@ -227,1372 +249,1737 @@
 
         .btn-secondary:hover {
             transform: translateY(-3px);
-            border-color: #c5d0e3;
+            border-color: var(--blue);
+            color: var(--blue);
         }
 
-        /* ================= HERO CARD ================= */
 
-        .profile-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
+        /* PROFILE CARD */
 
         .profile-card {
-            width: 350px;
-            height: 440px;
-            border-radius: 28px;
+            position: relative;
+
+            max-width: 390px;
+
+            margin-left: auto;
 
             background:
-                linear-gradient(145deg, #315efb, #798cff 55%, #d8ddff);
+                linear-gradient(
+                    145deg,
+                    #315efb,
+                    #6d7fff
+                );
 
-            position: relative;
+            border-radius: 32px;
+
+            padding: 45px;
+
+            color: white;
+
+            box-shadow:
+                0 35px 80px rgba(49, 94, 251, 0.25);
+
             overflow: hidden;
-
-            box-shadow: 0 35px 70px rgba(49,94,251,.25);
-
-            transform: rotate(3deg);
-            animation: float 5s ease-in-out infinite;
         }
 
         .profile-card::before {
             content: "";
+
             position: absolute;
-            width: 250px;
-            height: 250px;
-            border: 1px solid rgba(255,255,255,.4);
+
+            width: 220px;
+            height: 220px;
+
             border-radius: 50%;
+
+            background: rgba(255,255,255,0.12);
+
             top: -80px;
             right: -80px;
         }
 
         .profile-card::after {
             content: "";
+
             position: absolute;
-            width: 300px;
-            height: 300px;
-            border: 1px solid rgba(255,255,255,.3);
+
+            width: 150px;
+            height: 150px;
+
             border-radius: 50%;
-            bottom: -150px;
-            left: -100px;
+
+            background: rgba(255,255,255,0.08);
+
+            bottom: -70px;
+            left: -50px;
         }
 
-        .initial {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
+        .profile-initial {
+            position: relative;
+            z-index: 2;
+
+            width: 100px;
+            height: 100px;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.17);
+
+            border: 1px solid rgba(255,255,255,0.35);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             font-family: "Playfair Display", serif;
-            font-size: 130px;
-            color: white;
-            font-weight: 600;
+
+            font-size: 38px;
+
+            margin-bottom: 55px;
         }
 
-        .profile-info {
-            position: absolute;
-            bottom: 24px;
-            left: 24px;
-            right: 24px;
+        .profile-card h3 {
+            position: relative;
+            z-index: 2;
 
-            background: rgba(255,255,255,.16);
-            backdrop-filter: blur(12px);
+            font-size: 25px;
 
-            padding: 18px;
-            border: 1px solid rgba(255,255,255,.3);
-            border-radius: 18px;
-            color: white;
+            margin-bottom: 8px;
         }
 
-        .profile-info small {
-            opacity: .8;
+        .profile-card p {
+            position: relative;
+            z-index: 2;
+
+            color: rgba(255,255,255,0.82);
+
+            font-size: 14px;
         }
 
-        .profile-info strong {
-            display: block;
-            margin-top: 5px;
-            font-size: 16px;
-        }
 
-        .floating-badge {
-            position: absolute;
-            bottom: 20px;
-            left: -25px;
-
-            background: white;
-            padding: 14px 18px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .floating-badge span {
-            display: block;
-            color: var(--blue);
-            font-size: 18px;
-        }
-
-        /* ================= STATS ================= */
+        /* =========================
+           STATS
+        ========================= */
 
         .stats {
-            padding: 25px 0 90px;
+            padding: 35px 8%;
+            background: white;
+
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
 
-        .stats-grid {
+        .stats-container {
+            max-width: 1200px;
+            margin: auto;
+
             display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 1px;
-            background: var(--line);
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            overflow: hidden;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
         }
 
         .stat {
-            background: white;
-            padding: 28px;
+            text-align: center;
+
+            padding: 20px;
         }
 
-        .stat-number {
-            font-family: "Playfair Display", serif;
-            font-size: 34px;
+        .stat strong {
+            display: block;
+
             color: var(--blue);
+
+            font-size: 28px;
+
+            margin-bottom: 4px;
         }
 
-        .stat-label {
+        .stat span {
             color: var(--muted);
+
             font-size: 13px;
-            margin-top: 5px;
         }
 
-        /* ================= SECTION ================= */
 
-        section {
-            padding: 105px 0;
-        }
+        /* =========================
+           SECTION HEADER
+        ========================= */
 
         .section-label {
-            font-size: 12px;
-            font-weight: 800;
             color: var(--blue);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
             letter-spacing: 2px;
+
+            text-transform: uppercase;
+
             margin-bottom: 14px;
         }
 
         .section-title {
             font-family: "Playfair Display", serif;
+
             font-size: clamp(38px, 5vw, 62px);
-            line-height: 1.05;
-            max-width: 700px;
-            margin-bottom: 25px;
+
+            line-height: 1.1;
+
+            letter-spacing: -2px;
+
+            margin-bottom: 22px;
         }
 
         .section-description {
-            max-width: 620px;
             color: var(--muted);
-            line-height: 1.8;
+
+            max-width: 650px;
+
+            font-size: 16px;
         }
 
-        /* ================= ABOUT ================= */
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
 
         .about-grid {
             display: grid;
-            grid-template-columns: .7fr 1.3fr;
-            gap: 80px;
-            align-items: start;
+
+            grid-template-columns: 0.9fr 1.1fr;
+
+            gap: 90px;
+
+            align-items: center;
         }
 
-        .about-intro {
-            font-size: 23px;
-            line-height: 1.65;
+        .about-highlight {
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef3ff,
+                    #f7f4ff
+                );
+
+            border-radius: 30px;
+
+            padding: 45px;
+
+            position: relative;
+
+            overflow: hidden;
         }
 
-        .about-intro span {
+        .about-highlight::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: rgba(49,94,251,0.08);
+
+            right: -70px;
+            bottom: -70px;
+        }
+
+        .about-number {
+            font-family: "Playfair Display", serif;
+
+            font-size: 80px;
+
+            line-height: 1;
+
             color: var(--blue);
-            font-weight: 700;
+
+            margin-bottom: 15px;
         }
 
-        .data-list {
-            margin-top: 35px;
-            border-top: 1px solid var(--line);
+        .about-highlight h3 {
+            font-size: 21px;
+
+            margin-bottom: 10px;
         }
 
-        .data-row {
+        .about-highlight p {
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+
+            margin-bottom: 20px;
+
+            font-size: 16px;
+        }
+
+        .info-list {
+            margin-top: 30px;
+
+            display: grid;
+
+            gap: 14px;
+        }
+
+        .info-item {
             display: flex;
+
             justify-content: space-between;
-            gap: 30px;
-            padding: 17px 0;
+
+            gap: 20px;
+
+            padding-bottom: 14px;
+
             border-bottom: 1px solid var(--line);
+
+            font-size: 14px;
         }
 
-        .data-row span:first-child {
+        .info-item span:first-child {
             color: var(--muted);
         }
 
-        .data-row span:last-child {
+        .info-item span:last-child {
             font-weight: 700;
+
             text-align: right;
         }
 
-        /* ================= ACTIVITIES ================= */
+
+        /* =========================
+           ACTIVITIES
+        ========================= */
+
+        .activities {
+            background: var(--bg);
+        }
 
         .activity-grid {
             margin-top: 55px;
+
             display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 20px;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
         }
 
-        .activity {
-            min-height: 290px;
-            padding: 30px;
-            border-radius: 23px;
+        .activity-card {
             background: white;
+
             border: 1px solid var(--line);
-            position: relative;
-            overflow: hidden;
-            transition: .35s ease;
+
+            border-radius: 25px;
+
+            padding: 32px;
+
+            transition: 0.35s;
+
+            box-shadow: 0 8px 30px rgba(35,54,90,0.04);
         }
 
-        .activity:hover {
+        .activity-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow);
-        }
 
-        .activity-number {
-            font-family: "Playfair Display", serif;
-            font-size: 48px;
-            color: #dce5ff;
+            box-shadow: var(--shadow);
+
+            border-color: rgba(49,94,251,0.2);
         }
 
         .activity-icon {
-            font-size: 30px;
-            margin: 35px 0 20px;
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            background: var(--blue-soft);
+
+            color: var(--blue);
+
+            font-weight: 700;
+
+            margin-bottom: 25px;
         }
 
-        .activity h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
+        .activity-card h3 {
+            font-size: 19px;
+
+            margin-bottom: 10px;
         }
 
-        .activity p {
+        .activity-card p {
             color: var(--muted);
+
             font-size: 14px;
-            line-height: 1.7;
         }
 
-        /* ================= FOCUS ================= */
+
+        /* =========================
+           TECHNOLOGY
+        ========================= */
 
         .focus-section {
-            background: #121b30;
-            color: white;
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff 0%,
+                    #f3f6ff 100%
+                );
+
             position: relative;
+
             overflow: hidden;
         }
 
         .focus-section::before {
             content: "";
+
             position: absolute;
-            width: 500px;
-            height: 500px;
+
+            width: 420px;
+            height: 420px;
+
             border-radius: 50%;
-            background: rgba(49,94,251,.18);
-            filter: blur(50px);
+
+            background: rgba(49,94,251,0.07);
+
+            top: -180px;
             right: -150px;
-            top: -200px;
+        }
+
+        .focus-section::after {
+            content: "";
+
+            position: absolute;
+
+            width: 320px;
+            height: 320px;
+
+            border-radius: 50%;
+
+            background: rgba(137,119,255,0.07);
+
+            bottom: -170px;
+            left: -100px;
+        }
+
+        .focus-section .container {
+            position: relative;
+            z-index: 2;
         }
 
         .focus-section .section-label {
-            color: #91aaff;
+            color: var(--blue);
+        }
+
+        .focus-section .section-title {
+            color: var(--text);
         }
 
         .focus-section .section-description {
-            color: #aeb9cf;
+            color: var(--muted);
         }
 
         .focus-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 20px;
             margin-top: 55px;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
         }
 
         .focus-card {
-            border: 1px solid rgba(255,255,255,.1);
-            background: rgba(255,255,255,.04);
-            border-radius: 22px;
-            padding: 32px;
-            transition: .35s ease;
-        }
-
-        .focus-card:hover {
-            background: rgba(255,255,255,.08);
-            transform: translateY(-7px);
-        }
-
-        .focus-card span {
-            font-size: 13px;
-            color: #91aaff;
-            font-weight: 700;
-        }
-
-        .focus-card h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 29px;
-            margin: 45px 0 15px;
-        }
-
-        .focus-card p {
-            color: #aeb9cf;
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        /* ================= PROJECT ================= */
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 22px;
-            margin-top: 55px;
-        }
-
-        .project {
-            background: white;
-            border: 1px solid var(--line);
-            border-radius: 23px;
-            padding: 30px;
-            min-height: 250px;
-            transition: .35s ease;
             position: relative;
-        }
 
-        .project:hover {
-            transform: translateY(-7px);
-            box-shadow: var(--shadow);
-        }
+            min-height: 300px;
 
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            padding: 35px;
 
-        .project-number {
-            font-size: 12px;
-            font-weight: 800;
-            color: var(--blue);
-        }
+            border-radius: 28px;
 
-        .project-arrow {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: var(--blue-soft);
-            color: var(--blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+            background: rgba(255,255,255,0.88);
 
-        .project h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 29px;
-            margin-top: 55px;
-        }
+            border: 1px solid var(--line);
 
-        .project p {
-            color: var(--muted);
-            margin-top: 10px;
-            line-height: 1.6;
-        }
+            box-shadow:
+                0 15px 45px rgba(35,54,90,0.07);
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-            margin-top: 22px;
-        }
+            transition: 0.35s;
 
-        .tag {
-            padding: 7px 11px;
-            background: var(--blue-soft);
-            color: var(--blue);
-            border-radius: 30px;
-            font-size: 11px;
-            font-weight: 700;
-        }
-
-        /* ================= SKILLS ================= */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            margin-top: 50px;
-        }
-
-        .skill {
-            margin-bottom: 27px;
-        }
-
-        .skill-head {
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 9px;
-        }
-
-        .bar {
-            height: 7px;
-            background: #e7ebf3;
-            border-radius: 20px;
             overflow: hidden;
         }
 
-        .bar span {
-            display: block;
-            height: 100%;
-            border-radius: 20px;
-            background: linear-gradient(90deg, #315efb, #7c8fff);
+        .focus-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 150px;
+            height: 150px;
+
+            border-radius: 50%;
+
+            background: rgba(49,94,251,0.06);
+
+            right: -60px;
+            top: -60px;
+
+            transition: 0.35s;
         }
 
-        .skill-text {
-            font-size: 18px;
+        .focus-card:hover {
+            transform: translateY(-10px);
+
+            border-color: rgba(49,94,251,0.25);
+
+            box-shadow:
+                0 25px 60px rgba(49,94,251,0.12);
+        }
+
+        .focus-card:hover::before {
+            transform: scale(1.35);
+        }
+
+        .focus-number {
+            position: relative;
+            z-index: 2;
+
+            color: var(--blue);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 55px;
+        }
+
+        .focus-card h3 {
+            position: relative;
+            z-index: 2;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .focus-card p {
+            position: relative;
+            z-index: 2;
+
             color: var(--muted);
-            line-height: 1.8;
+
+            font-size: 14px;
         }
 
-        /* ================= TIMELINE ================= */
+
+        /* =========================
+           PROJECT
+        ========================= */
+
+        .projects {
+            background: white;
+        }
+
+        .project-grid {
+            margin-top: 55px;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .project-card {
+            border-radius: 28px;
+
+            padding: 40px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f1f5ff,
+                    #f8f7ff
+                );
+
+            border: 1px solid var(--line);
+
+            min-height: 300px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.35s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .project-number {
+            color: var(--blue);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .project-card h3 {
+            font-family: "Playfair Display", serif;
+
+            font-size: 31px;
+
+            margin: 55px 0 15px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            max-width: 450px;
+        }
+
+        .project-circle {
+            position: absolute;
+
+            width: 200px;
+            height: 200px;
+
+            border-radius: 50%;
+
+            border: 30px solid rgba(49,94,251,0.06);
+
+            right: -70px;
+            bottom: -80px;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            background: var(--bg);
+        }
+
+        .skills-grid {
+            margin-top: 55px;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .skill {
+            background: white;
+
+            border: 1px solid var(--line);
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(49,94,251,0.25);
+
+            box-shadow: var(--shadow);
+        }
+
+        .skill strong {
+            display: block;
+
+            margin-bottom: 6px;
+        }
+
+        .skill span {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           JOURNEY
+        ========================= */
+
+        .journey {
+            background: white;
+        }
 
         .timeline {
             margin-top: 60px;
-            position: relative;
-            border-left: 1px solid #ccd5e5;
-            margin-left: 10px;
+
+            border-left: 2px solid var(--line);
+
+            padding-left: 35px;
+
+            max-width: 850px;
         }
 
         .timeline-item {
             position: relative;
-            padding: 0 0 55px 45px;
+
+            padding-bottom: 45px;
         }
 
         .timeline-item::before {
             content: "";
+
             position: absolute;
+
             width: 12px;
             height: 12px;
+
             border-radius: 50%;
+
             background: var(--blue);
-            left: -6px;
-            top: 5px;
-            box-shadow: 0 0 0 7px var(--blue-soft);
+
+            left: -42px;
+            top: 8px;
+
+            box-shadow:
+                0 0 0 6px #eaf0ff;
         }
 
         .timeline-year {
-            font-size: 12px;
-            font-weight: 800;
             color: var(--blue);
+
+            font-size: 13px;
+
+            font-weight: 700;
+
             letter-spacing: 1px;
+
+            margin-bottom: 7px;
         }
 
         .timeline-item h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 28px;
-            margin: 8px 0;
+            font-size: 21px;
+
+            margin-bottom: 8px;
         }
 
         .timeline-item p {
             color: var(--muted);
-            max-width: 600px;
-            line-height: 1.7;
+
+            font-size: 14px;
         }
 
-        /* ================= DREAM ================= */
+
+        /* =========================
+           DREAM
+        ========================= */
 
         .dream {
-            padding: 120px 0;
             background:
-                linear-gradient(135deg, #eaf0ff, #f5f1ff);
+                linear-gradient(
+                    135deg,
+                    #eaf0ff,
+                    #f3efff
+                );
+
             text-align: center;
-            position: relative;
-            overflow: hidden;
+        }
+
+        .dream .container {
+            max-width: 900px;
         }
 
         .dream h2 {
             font-family: "Playfair Display", serif;
-            font-size: clamp(45px, 7vw, 85px);
-            line-height: 1;
-            max-width: 900px;
-            margin: 15px auto 25px;
+
+            font-size: clamp(42px, 6vw, 70px);
+
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+        }
+
+        .dream h2 span {
+            color: var(--blue);
+
+            font-style: italic;
         }
 
         .dream p {
-            max-width: 620px;
-            margin: auto;
             color: var(--muted);
-            line-height: 1.8;
+
+            max-width: 700px;
+
+            margin: auto;
+
+            font-size: 16px;
         }
 
-        .dream-role {
-            margin-top: 30px;
-            display: inline-block;
-            background: var(--blue);
-            color: white;
-            padding: 13px 20px;
-            border-radius: 50px;
-            font-weight: 700;
-            box-shadow: 0 12px 25px rgba(49,94,251,.2);
-        }
 
-        /* ================= FOOTER ================= */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #101827;
+            background: #121b30;
+
             color: white;
-            padding: 55px 0 30px;
+
+            padding: 45px 8%;
         }
 
-        .footer-grid {
+        .footer-container {
+            max-width: 1200px;
+
+            margin: auto;
+
             display: flex;
+
             justify-content: space-between;
-            gap: 40px;
-            padding-bottom: 35px;
+
+            gap: 30px;
+
+            align-items: center;
         }
 
-        .footer-title {
+        .footer-name {
             font-family: "Playfair Display", serif;
-            font-size: 35px;
+
+            font-size: 25px;
         }
 
-        .footer-text {
-            color: #9ca9bd;
-            max-width: 450px;
-            margin-top: 12px;
-            line-height: 1.7;
-        }
+        .footer-info {
+            color: #aeb9cf;
 
-        .footer-right {
-            text-align: right;
-            color: #9ca9bd;
             font-size: 13px;
+
+            text-align: right;
         }
 
-        .copyright {
-            padding-top: 22px;
-            border-top: 1px solid rgba(255,255,255,.1);
-            color: #7d899c;
-            font-size: 12px;
-            text-align: center;
-        }
 
-        /* ================= ANIMATION ================= */
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
-        @keyframes float {
-            0%,100% {
-                transform: rotate(3deg) translateY(0);
+        @media (max-width: 850px) {
+
+            section {
+                padding: 80px 6%;
             }
 
-            50% {
-                transform: rotate(3deg) translateY(-12px);
+            .nav-container {
+                padding: 0 6%;
             }
-        }
-
-        .reveal {
-            animation: reveal .8s ease both;
-        }
-
-        @keyframes reveal {
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ================= RESPONSIVE ================= */
-
-        @media(max-width: 850px) {
 
             .nav-links {
                 display: none;
-            }
-
-            .hero-grid,
-            .about-grid,
-            .skills-grid {
-                grid-template-columns: 1fr;
             }
 
             .hero {
                 padding-top: 130px;
             }
 
-            .hero-grid {
+            .hero-content {
+                grid-template-columns: 1fr;
+
                 gap: 55px;
             }
 
-            .profile-visual {
-                margin-bottom: 30px;
+            .profile-card {
+                margin: auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
             }
 
             .activity-grid,
             .focus-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-container {
                 grid-template-columns: 1fr;
-            }
-
-            .project-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                flex-direction: column;
-            }
-
-            .footer-right {
-                text-align: left;
             }
         }
 
-        @media(max-width: 500px) {
+
+        @media (max-width: 550px) {
 
             .hero h1 {
-                font-size: 56px;
                 letter-spacing: -2px;
             }
 
+            .activity-grid,
+            .focus-grid,
+            .project-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
             .profile-card {
-                width: 290px;
-                height: 380px;
+                padding: 35px;
             }
 
-            .initial {
-                font-size: 100px;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-
-            .data-row {
+            .footer-container {
                 flex-direction: column;
-                gap: 5px;
+
+                align-items: flex-start;
             }
 
-            .data-row span:last-child {
+            .footer-info {
+                text-align: left;
+            }
+
+            .info-item {
+                flex-direction: column;
+
+                gap: 3px;
+            }
+
+            .info-item span:last-child {
                 text-align: left;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
 
-<nav>
-    <a href="#home" class="logo">TIESKA<span>.</span></a>
+    <!-- =========================
+         NAVBAR
+    ========================= -->
 
-    <ul class="nav-links">
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#kegiatan">Kegiatan</a></li>
-        <li><a href="#teknologi">Teknologi</a></li>
-        <li><a href="#proyek">Proyek</a></li>
-        <li><a href="#perjalanan">Perjalanan</a></li>
-        <li><a href="#cita-cita">Cita-Cita</a></li>
-    </ul>
-</nav>
+    <nav>
 
+        <div class="nav-container">
 
-<!-- ================= HERO ================= -->
-
-<header class="hero" id="home">
-
-    <div class="container hero-grid">
-
-        <div class="reveal">
-
-            <div class="eyebrow">
-                MAHASISWA PTIK UNNES
+            <div class="logo">
+                Tieska<span>.</span>
             </div>
 
-            <h1>
-                Tieska<br>
-                <span>Mirfatus.</span>
-            </h1>
+            <ul class="nav-links">
 
-            <p class="hero-subtitle">
-                Mahasiswa <strong>Pendidikan Teknik Informatika dan Komputer</strong>
-                yang sedang membangun perjalanan di dunia teknologi,
-                pendidikan, organisasi, dan pengembangan diri.
-            </p>
+                <li>
+                    <a href="#tentang">Tentang</a>
+                </li>
 
-            <div class="hero-buttons">
-                <a href="#tentang" class="btn btn-primary">
-                    Kenali Saya →
-                </a>
+                <li>
+                    <a href="#aktivitas">Aktivitas</a>
+                </li>
 
-                <a href="#proyek" class="btn btn-secondary">
-                    Lihat Karya
-                </a>
-            </div>
+                <li>
+                    <a href="#teknologi">Teknologi</a>
+                </li>
+
+                <li>
+                    <a href="#perjalanan">Perjalanan</a>
+                </li>
+
+                <li>
+                    <a href="#cita-cita">Cita-Cita</a>
+                </li>
+
+            </ul>
 
         </div>
 
+    </nav>
 
-        <div class="profile-visual">
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div>
+
+                <div class="hero-label">
+                    Mahasiswa PTIK UNNES
+                </div>
+
+                <h1>
+                    Tieska<br>
+                    <span>Mirfatus.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Mahasiswa Pendidikan Teknik Informatika dan Komputer
+                    yang memiliki ketertarikan pada teknologi digital,
+                    organisasi, serta pengembangan teknologi untuk dunia pendidikan.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#tentang" class="btn btn-primary">
+                        Kenali Saya
+                    </a>
+
+                    <a href="#teknologi" class="btn btn-secondary">
+                        Eksplorasi Minat
+                    </a>
+
+                </div>
+
+            </div>
+
 
             <div class="profile-card">
 
-                <div class="initial">
+                <div class="profile-initial">
                     TM
                 </div>
 
-                <div class="profile-info">
-                    <small>PTIK • UNNES</small>
-                    <strong>Angkatan 2025</strong>
-                </div>
+                <h3>
+                    Tieska Mirfatus Sholekah
+                </h3>
 
-            </div>
-
-            <div class="floating-badge">
-                <span>∞</span>
-                Terus Belajar
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ================= STATS ================= -->
-
-<div class="stats">
-
-    <div class="container stats-grid">
-
-        <div class="stat">
-            <div class="stat-number">2025</div>
-            <div class="stat-label">Tahun Angkatan</div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number">PTIK</div>
-            <div class="stat-label">Program Studi</div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number">∞</div>
-            <div class="stat-label">Semangat Belajar</div>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= TENTANG ================= -->
-
-<section id="tentang">
-
-    <div class="container">
-
-        <div class="about-grid">
-
-            <div>
-
-                <div class="section-label">
-                    01 — TENTANG SAYA
-                </div>
-
-                <h2 class="section-title">
-                    Mengenal saya lebih dekat.
-                </h2>
-
-            </div>
-
-
-            <div>
-
-                <p class="about-intro">
-                    Saya adalah <span>Tieska Mirfatus Sholekah</span>,
-                    mahasiswa Pendidikan Teknik Informatika dan Komputer
-                    Universitas Negeri Semarang yang memiliki ketertarikan
-                    pada teknologi dan dunia pendidikan.
+                <p>
+                    Pendidikan Teknik Informatika dan Komputer
+                    · Universitas Negeri Semarang
                 </p>
 
-                <div class="data-list">
+            </div>
 
-                    <div class="data-row">
-                        <span>Nama</span>
-                        <span>Tieska Mirfatus Sholekah</span>
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STATS
+    ========================= -->
+
+    <div class="stats">
+
+        <div class="stats-container">
+
+            <div class="stat">
+
+                <strong>2025</strong>
+
+                <span>
+                    Tahun Angkatan
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>PTIK</strong>
+
+                <span>
+                    Program Studi
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <strong>UNNES</strong>
+
+                <span>
+                    Universitas
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         TENTANG
+    ========================= -->
+
+    <section class="about" id="tentang">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+
+                <div class="about-highlight">
+
+                    <div class="about-number">
+                        01
                     </div>
 
-                    <div class="data-row">
-                        <span>NIM</span>
-                        <span>2505090007</span>
+                    <h3>
+                        Mengenal Lebih Dekat
+                    </h3>
+
+                    <p>
+                        Perjalanan saya dimulai dari ketertarikan
+                        terhadap teknologi dan bagaimana teknologi
+                        dapat memberikan manfaat bagi pendidikan.
+                    </p>
+
+                </div>
+
+
+                <div class="about-text">
+
+                    <div class="section-label">
+                        Tentang Saya
                     </div>
 
-                    <div class="data-row">
-                        <span>Program Studi</span>
-                        <span>Pendidikan Teknik Informatika dan Komputer</span>
+                    <h2 class="section-title">
+                        Belajar teknologi,
+                        membangun masa depan.
+                    </h2>
+
+                    <p>
+                        Saya adalah Tieska Mirfatus Sholekah,
+                        mahasiswa Program Studi Pendidikan Teknik
+                        Informatika dan Komputer di Universitas Negeri Semarang.
+                    </p>
+
+                    <p>
+                        Selain menjalani perkuliahan, saya aktif mengikuti
+                        berbagai kegiatan organisasi di lingkungan kampus.
+                        Pengalaman tersebut membantu saya mengembangkan
+                        kemampuan komunikasi, kerja sama, tanggung jawab,
+                        dan kepemimpinan.
+                    </p>
+
+
+                    <div class="info-list">
+
+                        <div class="info-item">
+
+                            <span>Nama</span>
+
+                            <span>
+                                Tieska Mirfatus Sholekah
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>NIM</span>
+
+                            <span>
+                                2505090007
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>Program Studi</span>
+
+                            <span>
+                                Pendidikan Teknik Informatika dan Komputer
+                            </span>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <span>Universitas</span>
+
+                            <span>
+                                Universitas Negeri Semarang
+                            </span>
+
+                        </div>
+
                     </div>
 
-                    <div class="data-row">
-                        <span>Universitas</span>
-                        <span>Universitas Negeri Semarang</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         AKTIVITAS
+    ========================= -->
+
+    <section class="activities" id="aktivitas">
+
+        <div class="container">
+
+            <div class="section-label">
+                Di Luar Perkuliahan
+            </div>
+
+            <h2 class="section-title">
+                Aktivitas yang<br>
+                membentuk saya.
+            </h2>
+
+            <p class="section-description">
+                Perkuliahan bukan satu-satunya tempat untuk berkembang.
+                Saya juga mendapatkan pengalaman melalui berbagai aktivitas
+                di lingkungan kampus.
+            </p>
+
+
+            <div class="activity-grid">
+
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        01
                     </div>
 
-                    <div class="data-row">
-                        <span>Angkatan</span>
-                        <span>2025</span>
+                    <h3>
+                        Organisasi Kampus
+                    </h3>
+
+                    <p>
+                        Aktif mengikuti kegiatan organisasi mahasiswa
+                        dan terlibat dalam berbagai program kerja
+                        untuk mengembangkan kemampuan kerja sama
+                        serta tanggung jawab.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        02
                     </div>
 
+                    <h3>
+                        Himpunan Mahasiswa
+                    </h3>
+
+                    <p>
+                        Berpartisipasi dalam Himpunan Mahasiswa
+                        sebagai wadah untuk belajar berorganisasi,
+                        berkomunikasi, dan bekerja dalam sebuah tim.
+                    </p>
+
+                </div>
+
+
+                <div class="activity-card">
+
+                    <div class="activity-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        Pengembangan Diri
+                    </h3>
+
+                    <p>
+                        Terus mengembangkan kemampuan melalui kegiatan,
+                        pengalaman baru, serta pembelajaran di bidang
+                        teknologi dan pendidikan.
+                    </p>
+
                 </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= KEGIATAN ================= -->
 
-<section id="kegiatan">
+    <!-- =========================
+         TEKNOLOGI
+    ========================= -->
 
-    <div class="container">
+    <section class="focus-section" id="teknologi">
 
-        <div class="section-label">
-            02 — KEGIATAN
-        </div>
+        <div class="container">
 
-        <h2 class="section-title">
-            Belajar tidak hanya terjadi di ruang kelas.
-        </h2>
-
-        <p class="section-description">
-            Selain mengikuti kegiatan akademik, saya juga berusaha
-            mengembangkan kemampuan melalui organisasi, kepanitiaan,
-            dan berbagai kegiatan pengembangan diri.
-        </p>
-
-
-        <div class="activity-grid">
-
-            <div class="activity">
-
-                <div class="activity-number">01</div>
-
-                <div class="activity-icon">◈</div>
-
-                <h3>Organisasi</h3>
-
-                <p>
-                    Aktif dalam Himpunan Mahasiswa dan belajar bekerja sama,
-                    berkomunikasi, serta berkontribusi dalam kegiatan organisasi.
-                </p>
-
+            <div class="section-label">
+                Bidang yang Ingin Didalami
             </div>
 
+            <h2 class="section-title">
+                Eksplorasi<br>
+                Teknologi.
+            </h2>
 
-            <div class="activity">
-
-                <div class="activity-number">02</div>
-
-                <div class="activity-icon">◇</div>
-
-                <h3>Kepanitiaan</h3>
-
-                <p>
-                    Berpartisipasi dalam kegiatan kampus dan mengembangkan
-                    pengalaman dalam bekerja bersama tim.
-                </p>
-
-            </div>
+            <p class="section-description">
+                Saya ingin terus memperdalam kemampuan teknologi
+                sehingga dapat menghasilkan solusi digital yang
+                bermanfaat, khususnya dalam bidang pendidikan.
+            </p>
 
 
-            <div class="activity">
-
-                <div class="activity-number">03</div>
-
-                <div class="activity-icon">✦</div>
-
-                <h3>Pengembangan Diri</h3>
-
-                <p>
-                    Terus mengembangkan kemampuan dalam pemrograman,
-                    jaringan komputer, desain digital, dan teknologi pendidikan.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+            <div class="focus-grid">
 
 
-<!-- ================= TEKNOLOGI ================= -->
+                <div class="focus-card">
 
-<section class="focus-section" id="teknologi">
+                    <div class="focus-number">
+                        BIDANG 01
+                    </div>
 
-    <div class="container">
+                    <h3>
+                        Web Development
+                    </h3>
 
-        <div class="section-label">
-            03 — EKSPLORASI TEKNOLOGI
-        </div>
+                    <p>
+                        Mempelajari pengembangan website dari sisi
+                        antarmuka hingga sistem agar mampu membuat
+                        aplikasi web yang menarik, responsif,
+                        dan bermanfaat.
+                    </p>
 
-        <h2 class="section-title">
-            Bidang yang ingin saya dalami.
-        </h2>
-
-        <p class="section-description">
-            Saya ingin terus mengembangkan kemampuan teknologi yang dapat
-            diterapkan untuk menciptakan solusi digital yang bermanfaat,
-            khususnya dalam bidang pendidikan.
-        </p>
-
-
-        <div class="focus-grid">
-
-            <div class="focus-card">
-
-                <span>01 / WEB</span>
-
-                <h3>Web Development</h3>
-
-                <p>
-                    Mempelajari pengembangan website mulai dari struktur,
-                    tampilan, hingga pengalaman pengguna.
-                </p>
-
-            </div>
-
-
-            <div class="focus-card">
-
-                <span>02 / EDUCATION</span>
-
-                <h3>Teknologi Pendidikan</h3>
-
-                <p>
-                    Menggabungkan teknologi dengan pembelajaran untuk
-                    menciptakan pengalaman pendidikan yang lebih efektif.
-                </p>
-
-            </div>
-
-
-            <div class="focus-card">
-
-                <span>03 / FUTURE</span>
-
-                <h3>Artificial Intelligence</h3>
-
-                <p>
-                    Mengenal perkembangan AI dan peluang penerapannya
-                    untuk mendukung dunia pendidikan.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROYEK ================= -->
-
-<section id="proyek">
-
-    <div class="container">
-
-        <div class="section-label">
-            04 — KARYA & PROYEK
-        </div>
-
-        <h2 class="section-title">
-            Hal-hal yang sedang saya pelajari dan bangun.
-        </h2>
-
-        <p class="section-description">
-            Beberapa proyek dan pengalaman pembelajaran yang membantu
-            saya mengembangkan kemampuan di bidang teknologi.
-        </p>
-
-
-        <div class="project-grid">
-
-            <div class="project">
-
-                <div class="project-top">
-                    <span class="project-number">PROJECT 01</span>
-                    <span class="project-arrow">↗</span>
                 </div>
 
-                <h3>Website Profil Pribadi</h3>
 
-                <p>
-                    Website portfolio sederhana yang dikembangkan
-                    menggunakan HTML dan CSS.
-                </p>
+                <div class="focus-card">
 
-                <div class="tags">
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">GitHub Pages</span>
+                    <div class="focus-number">
+                        BIDANG 02
+                    </div>
+
+                    <h3>
+                        Teknologi Pendidikan
+                    </h3>
+
+                    <p>
+                        Mendalami bagaimana teknologi dapat digunakan
+                        untuk menciptakan media pembelajaran dan
+                        pengalaman belajar yang lebih efektif.
+                    </p>
+
                 </div>
 
-            </div>
 
+                <div class="focus-card">
 
-            <div class="project">
+                    <div class="focus-number">
+                        BIDANG 03
+                    </div>
 
-                <div class="project-top">
-                    <span class="project-number">PROJECT 02</span>
-                    <span class="project-arrow">↗</span>
-                </div>
+                    <h3>
+                        Artificial Intelligence
+                    </h3>
 
-                <h3>Pemrograman Berorientasi Objek</h3>
+                    <p>
+                        Mempelajari perkembangan kecerdasan buatan
+                        dan potensinya untuk membantu menciptakan
+                        solusi inovatif dalam dunia pendidikan.
+                    </p>
 
-                <p>
-                    Mempelajari konsep class, object, inheritance,
-                    polymorphism, dan konsep OOP lainnya.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">OOP</span>
-                    <span class="tag">Programming</span>
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="project-top">
-                    <span class="project-number">PROJECT 03</span>
-                    <span class="project-arrow">↗</span>
-                </div>
-
-                <h3>Jaringan Komputer</h3>
-
-                <p>
-                    Mempelajari konsep jaringan, subnetting, VLAN,
-                    routing, serta simulasi menggunakan Cisco Packet Tracer.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">Networking</span>
-                    <span class="tag">Cisco</span>
-                    <span class="tag">Packet Tracer</span>
-                </div>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="project-top">
-                    <span class="project-number">PROJECT 04</span>
-                    <span class="project-arrow">↗</span>
-                </div>
-
-                <h3>Perancangan UI/UX</h3>
-
-                <p>
-                    Merancang antarmuka dan pengalaman pengguna
-                    untuk berbagai kebutuhan aplikasi digital.
-                </p>
-
-                <div class="tags">
-                    <span class="tag">UI/UX</span>
-                    <span class="tag">Figma</span>
-                    <span class="tag">Design</span>
                 </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= SKILLS ================= -->
 
-<section>
+    <!-- =========================
+         PROYEK
+    ========================= -->
 
-    <div class="container">
+    <section class="projects">
 
-        <div class="section-label">
-            05 — KEMAMPUAN
+        <div class="container">
+
+            <div class="section-label">
+                Pengembangan
+            </div>
+
+            <h2 class="section-title">
+                Belajar melalui<br>
+                proses dan proyek.
+            </h2>
+
+            <p class="section-description">
+                Setiap tugas dan proyek menjadi kesempatan untuk
+                menerapkan teori menjadi pengalaman nyata.
+            </p>
+
+
+            <div class="project-grid">
+
+
+                <div class="project-card">
+
+                    <div class="project-number">
+                        PROYEK 01
+                    </div>
+
+                    <h3>
+                        Pemrograman
+                    </h3>
+
+                    <p>
+                        Membangun pemahaman mengenai pemrograman,
+                        Pemrograman Berorientasi Objek, struktur data,
+                        serta pengembangan solusi berbasis kode.
+                    </p>
+
+                    <div class="project-circle"></div>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-number">
+                        PROYEK 02
+                    </div>
+
+                    <h3>
+                        Jaringan Komputer
+                    </h3>
+
+                    <p>
+                        Mempelajari konsep jaringan komputer,
+                        konfigurasi perangkat jaringan,
+                        pengalamatan IP, VLAN, routing,
+                        dan simulasi menggunakan Cisco Packet Tracer.
+                    </p>
+
+                    <div class="project-circle"></div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <h2 class="section-title">
-            Kemampuan yang terus berkembang.
-        </h2>
+    </section>
 
 
-        <div class="skills-grid">
 
-            <div>
+    <!-- =========================
+         KEMAMPUAN
+    ========================= -->
+
+    <section class="skills">
+
+        <div class="container">
+
+            <div class="section-label">
+                Kemampuan yang Dikembangkan
+            </div>
+
+            <h2 class="section-title">
+                Terus belajar,<br>
+                terus berkembang.
+            </h2>
+
+
+            <div class="skills-grid">
+
 
                 <div class="skill">
 
-                    <div class="skill-head">
-                        <span>HTML & CSS</span>
-                        <span>90%</span>
-                    </div>
+                    <strong>
+                        Pemrograman
+                    </strong>
 
-                    <div class="bar">
-                        <span style="width:90%"></span>
-                    </div>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <div class="skill-head">
-                        <span>Python</span>
-                        <span>75%</span>
-                    </div>
-
-                    <div class="bar">
-                        <span style="width:75%"></span>
-                    </div>
+                    <span>
+                        Dasar pengembangan program
+                    </span>
 
                 </div>
 
 
                 <div class="skill">
 
-                    <div class="skill-head">
-                        <span>Web Development</span>
-                        <span>70%</span>
-                    </div>
+                    <strong>
+                        Web Development
+                    </strong>
 
-                    <div class="bar">
-                        <span style="width:70%"></span>
-                    </div>
+                    <span>
+                        Website dan antarmuka digital
+                    </span>
 
                 </div>
 
 
                 <div class="skill">
 
-                    <div class="skill-head">
-                        <span>UI/UX Design</span>
-                        <span>75%</span>
+                    <strong>
+                        Jaringan
+                    </strong>
+
+                    <span>
+                        Konfigurasi dan simulasi jaringan
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>
+                        Desain Digital
+                    </strong>
+
+                    <span>
+                        Canva dan Figma
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>
+                        Kerja Sama
+                    </strong>
+
+                    <span>
+                        Kolaborasi dalam tim
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>
+                        Komunikasi
+                    </strong>
+
+                    <span>
+                        Penyampaian ide dan informasi
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>
+                        Organisasi
+                    </strong>
+
+                    <span>
+                        Pengelolaan kegiatan
+                    </span>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <strong>
+                        Kreativitas
+                    </strong>
+
+                    <span>
+                        Mengembangkan ide dan solusi
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PERJALANAN
+    ========================= -->
+
+    <section class="journey" id="perjalanan">
+
+        <div class="container">
+
+            <div class="section-label">
+                Perjalanan
+            </div>
+
+            <h2 class="section-title">
+                Dari mahasiswa<br>
+                menuju profesional.
+            </h2>
+
+            <p class="section-description">
+                Setiap tahap menjadi bagian dari proses untuk
+                mencapai tujuan yang lebih besar.
+            </p>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-year">
+                        2025
                     </div>
 
-                    <div class="bar">
-                        <span style="width:75%"></span>
+                    <h3>
+                        Memulai Perjalanan di PTIK UNNES
+                    </h3>
+
+                    <p>
+                        Memulai pendidikan tinggi di Program Studi
+                        Pendidikan Teknik Informatika dan Komputer
+                        Universitas Negeri Semarang.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-year">
+                        SAAT INI
                     </div>
 
+                    <h3>
+                        Mengembangkan Kemampuan
+                    </h3>
+
+                    <p>
+                        Memperdalam pemrograman, jaringan komputer,
+                        desain digital, teknologi pendidikan,
+                        dan pengalaman organisasi.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-year">
+                        MASA DEPAN
+                    </div>
+
+                    <h3>
+                        Menjadi Profesional di Bidang Teknologi Pendidikan
+                    </h3>
+
+                    <p>
+                        Menguasai teknologi dan mampu menghasilkan
+                        inovasi digital yang dapat memberikan manfaat
+                        bagi dunia pendidikan.
+                    </p>
+
                 </div>
 
             </div>
 
+        </div>
 
-            <div>
+    </section>
 
-                <p class="skill-text">
-                    Kemampuan saya masih terus berkembang. Saya percaya
-                    bahwa menjadi ahli bukan hanya tentang menguasai
-                    teknologi, tetapi juga tentang terus belajar,
-                    mencoba, dan menghasilkan sesuatu yang bermanfaat.
-                </p>
 
+
+    <!-- =========================
+         CITA-CITA
+    ========================= -->
+
+    <section class="dream" id="cita-cita">
+
+        <div class="container">
+
+            <div class="section-label">
+                Cita-Cita
+            </div>
+
+            <h2>
+                Menjadi dosen PTIK UNNES
+                yang <span>berkompeten.</span>
+            </h2>
+
+            <p>
+                Saya ingin menjadi seorang dosen di bidang Pendidikan
+                Teknik Informatika dan Komputer yang tidak hanya memiliki
+                kemampuan akademik, tetapi juga mampu menguasai teknologi
+                dan membagikan ilmu kepada generasi berikutnya.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-name">
+                Tieska Mirfatus Sholekah
+            </div>
+
+            <div class="footer-info">
+                2505090007 · PTIK UNNES · Angkatan 2025
             </div>
 
         </div>
 
-    </div>
-
-</section>
-
-
-<!-- ================= PERJALANAN ================= -->
-
-<section id="perjalanan">
-
-    <div class="container">
-
-        <div class="section-label">
-            06 — PERJALANAN
-        </div>
-
-        <h2 class="section-title">
-            Dari belajar, berkembang, hingga menciptakan.
-        </h2>
-
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="timeline-year">
-                    2025
-                </div>
-
-                <h3>Memulai Perjalanan di PTIK</h3>
-
-                <p>
-                    Memulai pendidikan di Program Studi Pendidikan
-                    Teknik Informatika dan Komputer Universitas Negeri Semarang.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-year">
-                    SEKARANG
-                </div>
-
-                <h3>Berkembang Melalui Pengalaman</h3>
-
-                <p>
-                    Mengembangkan kemampuan melalui perkuliahan,
-                    organisasi, kepanitiaan, proyek teknologi,
-                    dan berbagai kegiatan pengembangan diri.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-year">
-                    TARGET
-                </div>
-
-                <h3>Menjadi Expert di Bidang Teknologi</h3>
-
-                <p>
-                    Mendalami Web Development, Teknologi Pendidikan,
-                    dan Artificial Intelligence secara bertahap.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-year">
-                    MASA DEPAN
-                </div>
-
-                <h3>Berkarier di Dunia Pendidikan</h3>
-
-                <p>
-                    Menggunakan kemampuan teknologi untuk berkontribusi
-                    dalam dunia pendidikan dan menjadi seorang dosen PTIK.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CITA-CITA ================= -->
-
-<section class="dream" id="cita-cita">
-
-    <div class="container">
-
-        <div class="section-label">
-            07 — CITA-CITA
-        </div>
-
-        <h2>
-            Menjadi Dosen PTIK.
-        </h2>
-
-        <p>
-            Saya ingin terus belajar dan berkembang hingga mampu menjadi
-            seorang pendidik sekaligus praktisi teknologi yang dapat
-            memberikan manfaat bagi mahasiswa dan dunia pendidikan.
-        </p>
-
-        <div class="dream-role">
-            Target Masa Depan → Dosen PTIK UNNES
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div>
-
-                <div class="footer-title">
-                    Tieska Mirfatus.
-                </div>
-
-                <p class="footer-text">
-                    Mahasiswa Pendidikan Teknik Informatika dan Komputer
-                    Universitas Negeri Semarang yang terus belajar,
-                    berkembang, dan mengeksplorasi dunia teknologi.
-                </p>
-
-            </div>
-
-
-            <div class="footer-right">
-
-                <p>PTIK UNNES</p>
-                <p>Angkatan 2025</p>
-                <p>2505090007</p>
-
-            </div>
-
-        </div>
-
-
-        <div class="copyright">
-            © 2026 Tieska Mirfatus Sholekah · Dibangun dengan semangat belajar.
-        </div>
-
-    </div>
-
-</footer>
+    </footer>
 
 
 </body>
