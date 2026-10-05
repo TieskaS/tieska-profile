@@ -9,7 +9,7 @@
     <style>
 
         /* =====================================================
-           RESET
+           DASAR
         ===================================================== */
 
         * {
@@ -20,22 +20,24 @@
         }
 
         :root {
-            --bg: #050b14;
-            --bg2: #081321;
-            --card: rgba(255,255,255,0.055);
-            --card2: rgba(255,255,255,0.035);
-            --cyan: #63ddff;
-            --cyan2: #21b9e8;
-            --white: #f5fbff;
-            --text: #b7c9d8;
-            --muted: #71879a;
-            --border: rgba(99,221,255,0.14);
+            --blue: #2477ff;
+            --blue-dark: #174ea6;
+            --sky: #72d9ff;
+            --light-blue: #eaf7ff;
+            --soft-blue: #f4faff;
+            --lavender: #f0edff;
+            --navy: #12233f;
+            --text: #50627a;
+            --muted: #8291a5;
+            --white: #ffffff;
+            --border: #dcecf8;
+            --shadow: 0 20px 60px rgba(49, 113, 170, 0.10);
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--white);
+            background: #ffffff;
+            color: var(--navy);
             line-height: 1.7;
             overflow-x: hidden;
         }
@@ -45,40 +47,45 @@
         }
 
         /* =====================================================
-           BACKGROUND
+           BACKGROUND DECORATION
         ===================================================== */
 
         body::before {
             content: "";
+
             position: fixed;
-            inset: 0;
+
+            width: 420px;
+            height: 420px;
+
+            top: -170px;
+            right: -120px;
+
+            background: #dff5ff;
+
+            border-radius: 50%;
+
+            filter: blur(2px);
+
             z-index: -3;
-
-            background-image:
-                linear-gradient(rgba(99,221,255,0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(99,221,255,0.035) 1px, transparent 1px);
-
-            background-size: 55px 55px;
-
-            mask-image: linear-gradient(to bottom, black, transparent 85%);
         }
 
         body::after {
             content: "";
+
             position: fixed;
-            width: 500px;
-            height: 500px;
 
-            right: -220px;
-            top: 100px;
+            width: 350px;
+            height: 350px;
 
-            background: rgba(33,185,232,0.08);
+            left: -180px;
+            top: 48%;
 
-            filter: blur(100px);
+            background: #eeebff;
 
             border-radius: 50%;
 
-            z-index: -2;
+            z-index: -3;
         }
 
         /* =====================================================
@@ -87,77 +94,85 @@
 
         nav {
             position: fixed;
+
             top: 18px;
             left: 50%;
+
             transform: translateX(-50%);
 
-            width: min(1150px, 92%);
+            width: min(1160px, 92%);
 
-            padding: 13px 18px;
+            padding: 11px 15px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            background: rgba(5,11,20,0.72);
+            background: rgba(255,255,255,0.82);
+
             backdrop-filter: blur(20px);
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.9);
+
             border-radius: 18px;
 
-            z-index: 1000;
+            box-shadow: 0 12px 40px rgba(57,108,150,0.10);
 
-            box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+            z-index: 1000;
         }
 
         .logo {
-            width: 42px;
-            height: 42px;
+            width: 43px;
+            height: 43px;
 
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
-            border-radius: 12px;
+            border-radius: 13px;
 
             background: linear-gradient(
                 135deg,
-                var(--cyan),
-                var(--cyan2)
+                var(--blue),
+                #55cfff
             );
 
-            color: #04101a;
+            color: white;
 
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 900;
 
-            box-shadow: 0 0 25px rgba(99,221,255,0.2);
+            box-shadow: 0 8px 20px rgba(36,119,255,0.20);
         }
 
         nav ul {
             display: flex;
-            gap: 5px;
+            align-items: center;
+
+            gap: 3px;
+
             list-style: none;
         }
 
         nav ul a {
             display: block;
 
-            padding: 9px 12px;
+            padding: 9px 11px;
 
-            color: #b8cad7;
+            color: #53657b;
+
+            border-radius: 9px;
 
             font-size: 12px;
             font-weight: 600;
-
-            border-radius: 9px;
 
             transition: 0.3s;
         }
 
         nav ul a:hover {
-            color: var(--cyan);
-            background: rgba(99,221,255,0.08);
+            color: var(--blue);
+
+            background: var(--light-blue);
         }
 
         /* =====================================================
@@ -171,13 +186,15 @@
 
             margin: auto;
 
-            padding: 150px 6% 90px;
+            padding: 145px 6% 90px;
 
             display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
+
+            grid-template-columns: 1.15fr 0.85fr;
+
             align-items: center;
 
-            gap: 80px;
+            gap: 70px;
 
             position: relative;
         }
@@ -190,59 +207,66 @@
             width: 650px;
             height: 650px;
 
-            left: -300px;
-            top: 100px;
+            left: -350px;
+            top: 120px;
 
-            background: rgba(99,221,255,0.055);
-
-            filter: blur(110px);
+            background: #eef9ff;
 
             border-radius: 50%;
 
-            z-index: -1;
+            z-index: -2;
         }
 
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .hero-content {
+            animation: fadeUp 0.9s ease;
+        }
 
-            padding: 7px 13px;
+        .welcome {
+            display: inline-flex;
+
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 13px;
 
             margin-bottom: 22px;
 
-            border: 1px solid var(--border);
+            background: var(--light-blue);
+
+            border: 1px solid #d5effc;
+
             border-radius: 50px;
 
-            background: rgba(99,221,255,0.045);
+            color: var(--blue);
 
-            color: var(--cyan);
+            font-size: 10px;
 
-            font-size: 11px;
             font-weight: bold;
-            letter-spacing: 2px;
+
+            letter-spacing: 1.5px;
         }
 
-        .eyebrow::before {
-            content: "";
+        .welcome span {
             width: 7px;
             height: 7px;
 
             border-radius: 50%;
 
-            background: var(--cyan);
+            background: var(--blue);
 
-            box-shadow: 0 0 12px var(--cyan);
+            box-shadow: 0 0 10px rgba(36,119,255,0.5);
         }
 
         .hero h1 {
-            font-size: clamp(48px, 7vw, 88px);
+            font-size: clamp(50px, 7vw, 84px);
 
             line-height: 0.98;
 
             letter-spacing: -4px;
 
-            margin-bottom: 24px;
+            color: var(--navy);
+
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
@@ -250,25 +274,27 @@
 
             background: linear-gradient(
                 90deg,
-                #ffffff,
-                var(--cyan)
+                var(--blue-dark),
+                #27a9e8
             );
 
             -webkit-background-clip: text;
+
             -webkit-text-fill-color: transparent;
         }
 
         .hero-subtitle {
             font-size: 21px;
-            font-weight: 600;
 
-            color: #d9e8f1;
+            font-weight: 700;
 
-            margin-bottom: 18px;
+            color: #29486c;
+
+            margin-bottom: 16px;
         }
 
         .hero-description {
-            max-width: 650px;
+            max-width: 630px;
 
             color: var(--text);
 
@@ -279,113 +305,130 @@
 
         .hero-buttons {
             display: flex;
+
             gap: 12px;
+
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
-            align-items: center;
-            gap: 9px;
 
-            padding: 13px 19px;
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 13px 20px;
 
             border-radius: 11px;
 
             font-size: 13px;
+
             font-weight: bold;
 
             transition: 0.3s;
         }
 
         .btn-primary {
-            background: var(--cyan);
-            color: #04101a;
+            color: white;
 
-            box-shadow: 0 8px 30px rgba(99,221,255,0.15);
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                #36b9ee
+            );
+
+            box-shadow:
+                0 10px 25px rgba(36,119,255,0.20);
         }
 
         .btn-primary:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(99,221,255,0.28);
+
+            box-shadow:
+                0 16px 35px rgba(36,119,255,0.27);
         }
 
         .btn-secondary {
-            color: var(--cyan);
+            color: var(--blue);
 
-            border: 1px solid var(--border);
+            background: white;
 
-            background: rgba(99,221,255,0.035);
+            border: 1px solid #cfe6f5;
         }
 
         .btn-secondary:hover {
             transform: translateY(-4px);
-            background: rgba(99,221,255,0.09);
+
+            background: var(--light-blue);
+
+            border-color: #a9d8f3;
         }
 
         /* =====================================================
-           PROFILE VISUAL
+           HERO VISUAL
         ===================================================== */
 
-        .visual-wrapper {
-            position: relative;
-
+        .hero-visual {
             display: flex;
+
             justify-content: center;
-            align-items: center;
+
+            position: relative;
         }
 
-        .orbit {
+        .visual-circle {
             position: absolute;
 
-            width: 330px;
-            height: 330px;
-
-            border: 1px solid rgba(99,221,255,0.13);
+            width: 360px;
+            height: 360px;
 
             border-radius: 50%;
 
-            animation: rotate 18s linear infinite;
+            border: 1px dashed #bde7fa;
+
+            animation: spin 25s linear infinite;
         }
 
-        .orbit::before {
+        .visual-circle::before {
             content: "";
 
             position: absolute;
 
-            width: 9px;
-            height: 9px;
-
-            background: var(--cyan);
+            width: 13px;
+            height: 13px;
 
             border-radius: 50%;
 
-            top: 25px;
-            left: 45px;
+            background: var(--blue);
 
-            box-shadow: 0 0 18px var(--cyan);
+            top: 30px;
+            left: 65px;
+
+            box-shadow: 0 0 15px rgba(36,119,255,0.4);
         }
 
         .profile-card {
             position: relative;
 
-            width: 285px;
+            width: 300px;
 
-            padding: 35px 28px;
+            padding: 30px;
 
             text-align: center;
 
-            background: rgba(255,255,255,0.055);
+            background: rgba(255,255,255,0.78);
 
-            border: 1px solid rgba(99,221,255,0.18);
+            backdrop-filter: blur(15px);
 
-            backdrop-filter: blur(20px);
+            border: 1px solid white;
 
             border-radius: 28px;
 
             box-shadow:
-                0 30px 70px rgba(0,0,0,0.35),
-                inset 0 1px rgba(255,255,255,0.08);
+                0 30px 70px rgba(60,124,166,0.16);
+
+            animation: floating 5s ease-in-out infinite;
 
             z-index: 2;
         }
@@ -395,119 +438,139 @@
 
             position: absolute;
 
-            top: 15px;
-            right: 18px;
+            top: 17px;
+            right: 20px;
 
-            color: rgba(99,221,255,0.5);
+            padding: 5px 9px;
 
-            font-size: 10px;
+            background: var(--light-blue);
+
+            color: var(--blue);
+
+            border-radius: 20px;
+
+            font-size: 9px;
+
             font-weight: bold;
-            letter-spacing: 2px;
+
+            letter-spacing: 1px;
         }
 
-        .profile-circle {
-            width: 145px;
-            height: 145px;
+        .profile-photo {
+            width: 155px;
+            height: 155px;
 
-            margin: 5px auto 25px;
+            margin: 8px auto 23px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             border-radius: 50%;
 
             background:
-                radial-gradient(
-                    circle at 30% 20%,
-                    #d9f8ff,
-                    var(--cyan) 35%,
-                    #1685ad 100%
+                linear-gradient(
+                    135deg,
+                    #d9f5ff,
+                    #6ed7f7,
+                    #388af2
                 );
 
-            color: #031019;
+            border: 7px solid white;
 
-            font-size: 45px;
+            color: white;
+
+            font-size: 48px;
+
             font-weight: 900;
 
-            border: 6px solid rgba(255,255,255,0.08);
-
             box-shadow:
-                0 0 0 8px rgba(99,221,255,0.04),
-                0 0 50px rgba(99,221,255,0.22);
+                0 15px 40px rgba(36,119,255,0.18);
         }
 
         .profile-card h3 {
             font-size: 18px;
-            margin-bottom: 6px;
+
+            color: var(--navy);
+
+            margin-bottom: 4px;
         }
 
         .profile-card p {
             color: var(--muted);
-            font-size: 13px;
+
+            font-size: 12px;
         }
 
-        .profile-status {
-            display: inline-flex;
+        .profile-badge {
+            display: inline-block;
 
-            margin-top: 18px;
+            margin-top: 17px;
 
-            padding: 6px 11px;
+            padding: 7px 12px;
+
+            background: #f0faff;
+
+            border: 1px solid #d8effa;
 
             border-radius: 30px;
 
-            background: rgba(99,221,255,0.07);
+            color: var(--blue);
 
-            color: var(--cyan);
+            font-size: 9px;
 
-            font-size: 10px;
             font-weight: bold;
-
-            border: 1px solid var(--border);
         }
 
         /* =====================================================
-           QUICK STATS
+           STATISTIK
         ===================================================== */
 
         .stats {
             max-width: 1050px;
 
-            margin: -20px auto 0;
+            margin: -10px auto 0;
 
             padding: 0 6% 90px;
 
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
 
-            gap: 14px;
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 15px;
         }
 
         .stat {
-            padding: 20px;
-
-            border: 1px solid rgba(255,255,255,0.07);
-
-            background: rgba(255,255,255,0.025);
-
-            border-radius: 15px;
+            padding: 22px;
 
             text-align: center;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            box-shadow: 0 10px 35px rgba(57,108,150,0.06);
 
             transition: 0.3s;
         }
 
         .stat:hover {
             transform: translateY(-5px);
-            border-color: var(--border);
+
+            box-shadow: var(--shadow);
         }
 
         .stat strong {
             display: block;
 
-            color: var(--cyan);
+            color: var(--blue);
 
-            font-size: 24px;
+            font-size: 25px;
+
+            line-height: 1.2;
         }
 
         .stat span {
@@ -517,58 +580,63 @@
         }
 
         /* =====================================================
-           SECTION GENERAL
+           SECTION
         ===================================================== */
 
         section {
             padding: 105px 6%;
         }
 
-        .section-container {
+        .container {
             max-width: 1100px;
+
             margin: auto;
         }
 
         .section-label {
             display: flex;
+
             align-items: center;
-            gap: 12px;
 
-            margin-bottom: 10px;
+            gap: 11px;
 
-            color: var(--cyan);
+            margin-bottom: 11px;
 
-            font-size: 11px;
-            font-weight: bold;
+            color: var(--blue);
 
-            letter-spacing: 3px;
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: 2.5px;
         }
 
         .section-label::after {
             content: "";
 
-            width: 45px;
+            width: 40px;
+
             height: 1px;
 
-            background: var(--cyan);
-
-            opacity: 0.5;
+            background: #8edcf8;
         }
 
         .section-title {
-            max-width: 700px;
+            max-width: 750px;
 
-            font-size: clamp(32px, 5vw, 48px);
+            color: var(--navy);
+
+            font-size: clamp(33px,5vw,48px);
 
             line-height: 1.1;
 
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
 
-            margin-bottom: 50px;
+            margin-bottom: 48px;
         }
 
         .section-title span {
-            color: var(--cyan);
+            color: var(--blue);
         }
 
         /* =====================================================
@@ -576,98 +644,131 @@
         ===================================================== */
 
         .about-section {
-            background: linear-gradient(
-                180deg,
-                transparent,
-                rgba(99,221,255,0.025)
-            );
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f7fcff
+                );
         }
 
         .about-layout {
             display: grid;
-            grid-template-columns: 0.7fr 1.3fr;
-            gap: 50px;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 55px;
+
             align-items: center;
         }
 
-        .about-intro {
+        .about-text {
             color: var(--text);
-            font-size: 15px;
+
+            font-size: 14px;
         }
 
-        .about-intro strong {
-            color: white;
+        .about-text strong {
+            color: var(--navy);
+        }
+
+        .about-quote {
+            margin-top: 22px;
+
+            padding: 16px 19px;
+
+            background: var(--light-blue);
+
+            border-left: 3px solid var(--blue);
+
+            border-radius: 0 12px 12px 0;
+
+            color: #44627f;
+
+            font-size: 13px;
+
+            font-style: italic;
         }
 
         .info-grid {
             display: grid;
+
             grid-template-columns: repeat(2,1fr);
+
             gap: 13px;
         }
 
         .info-card {
-            padding: 22px;
+            padding: 23px;
 
-            background: var(--card);
+            background: white;
 
             border: 1px solid var(--border);
 
-            border-radius: 15px;
+            border-radius: 16px;
+
+            box-shadow: 0 8px 30px rgba(58,117,157,0.05);
 
             transition: 0.3s;
         }
 
         .info-card:hover {
             transform: translateY(-5px);
-            background: rgba(99,221,255,0.065);
+
+            border-color: #b9e1f4;
+
+            box-shadow: var(--shadow);
         }
 
         .info-card small {
             display: block;
 
-            color: var(--cyan);
+            color: var(--blue);
 
-            font-size: 10px;
-            font-weight: bold;
+            font-size: 9px;
 
-            letter-spacing: 2px;
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
 
             margin-bottom: 5px;
         }
 
         .info-card p {
-            color: #dce9f0;
+            color: var(--navy);
 
-            font-size: 14px;
+            font-size: 13px;
+
+            font-weight: 600;
         }
 
         /* =====================================================
-           ACTIVITY
+           KEGIATAN
         ===================================================== */
 
         .activity-section {
-            background: var(--bg2);
+            background: #f3faff;
         }
 
         .activity-card {
             display: grid;
-            grid-template-columns: 100px 1fr;
+
+            grid-template-columns: 95px 1fr;
+
             gap: 30px;
 
             padding: 38px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(99,221,255,0.09),
-                    rgba(255,255,255,0.025)
-                );
+            background: white;
 
-            border: 1px solid var(--border);
+            border: 1px solid #dceef8;
 
-            border-radius: 24px;
+            border-radius: 25px;
+
+            box-shadow: var(--shadow);
 
             position: relative;
+
             overflow: hidden;
         }
 
@@ -676,98 +777,142 @@
 
             position: absolute;
 
-            width: 200px;
-            height: 200px;
+            width: 230px;
+            height: 230px;
 
-            right: -100px;
-            bottom: -100px;
+            right: -110px;
+            bottom: -120px;
 
             border-radius: 50%;
 
-            background: rgba(99,221,255,0.06);
+            background: #e8f7ff;
         }
 
         .activity-icon {
-            width: 80px;
-            height: 80px;
+            width: 76px;
+            height: 76px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            border-radius: 20px;
+            border-radius: 21px;
 
-            background: rgba(99,221,255,0.09);
+            background: linear-gradient(
+                135deg,
+                #e4f7ff,
+                #d9edff
+            );
 
-            border: 1px solid var(--border);
+            color: var(--blue);
 
-            font-size: 32px;
+            font-size: 30px;
         }
 
         .activity-card h3 {
             font-size: 25px;
-            margin-bottom: 10px;
+
+            margin-bottom: 9px;
         }
 
         .activity-card p {
             color: var(--text);
+
             font-size: 14px;
         }
 
         /* =====================================================
-           FOCUS IT
+           FOKUS IT
         ===================================================== */
 
         .focus-grid {
             display: grid;
+
             grid-template-columns: repeat(3,1fr);
+
             gap: 17px;
         }
 
         .focus-card {
-            min-height: 260px;
+            min-height: 265px;
 
             padding: 28px;
 
-            background: var(--card);
+            background: white;
 
             border: 1px solid var(--border);
 
-            border-radius: 20px;
+            border-radius: 21px;
+
+            box-shadow: 0 8px 35px rgba(57,108,150,0.05);
 
             transition: 0.35s;
 
             position: relative;
+
             overflow: hidden;
+        }
+
+        .focus-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            right: -65px;
+            top: -65px;
+
+            background: var(--light-blue);
+
+            border-radius: 50%;
         }
 
         .focus-card:hover {
             transform: translateY(-9px);
 
-            border-color: rgba(99,221,255,0.5);
+            border-color: #acdff4;
 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.22);
+            box-shadow:
+                0 25px 55px rgba(57,108,150,0.12);
         }
 
         .focus-number {
-            color: var(--cyan);
+            color: var(--blue);
 
-            font-size: 11px;
+            font-size: 10px;
+
             font-weight: bold;
 
             letter-spacing: 2px;
         }
 
         .focus-icon {
-            font-size: 27px;
+            width: 45px;
+            height: 45px;
 
-            margin: 28px 0 14px;
+            margin: 28px 0 16px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 13px;
+
+            background: var(--light-blue);
+
+            color: var(--blue);
+
+            font-size: 22px;
         }
 
         .focus-card h3 {
-            font-size: 21px;
+            font-size: 20px;
 
-            margin-bottom: 10px;
+            margin-bottom: 9px;
         }
 
         .focus-card p {
@@ -781,23 +926,32 @@
         ===================================================== */
 
         .project-section {
-            background: var(--bg2);
+            background:
+                linear-gradient(
+                    180deg,
+                    #f5fbff,
+                    #ffffff
+                );
         }
 
         .project-grid {
             display: grid;
+
             grid-template-columns: repeat(2,1fr);
+
             gap: 17px;
         }
 
         .project-card {
             padding: 30px;
 
-            background: var(--card);
+            background: white;
 
             border: 1px solid var(--border);
 
             border-radius: 20px;
+
+            box-shadow: 0 9px 35px rgba(57,108,150,0.055);
 
             transition: 0.35s;
 
@@ -807,45 +961,53 @@
         .project-card:hover {
             transform: translateY(-7px);
 
-            border-color: rgba(99,221,255,0.4);
+            border-color: #afdff5;
+
+            box-shadow: var(--shadow);
         }
 
         .project-top {
             display: flex;
-            justify-content: space-between;
+
             align-items: center;
 
-            margin-bottom: 20px;
+            justify-content: space-between;
+
+            margin-bottom: 18px;
         }
 
         .project-number {
-            color: var(--cyan);
+            color: var(--blue);
 
             font-size: 10px;
-            font-weight: bold;
+
+            font-weight: 800;
 
             letter-spacing: 2px;
         }
 
         .project-symbol {
-            width: 35px;
-            height: 35px;
+            width: 36px;
+            height: 36px;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
             border-radius: 10px;
 
-            background: rgba(99,221,255,0.08);
+            background: var(--light-blue);
 
-            font-size: 17px;
+            color: var(--blue);
+
+            font-weight: bold;
         }
 
         .project-card h3 {
             font-size: 20px;
 
-            margin-bottom: 9px;
+            margin-bottom: 8px;
         }
 
         .project-card p {
@@ -857,20 +1019,23 @@
         .tag {
             display: inline-block;
 
-            margin-top: 18px;
+            margin-top: 17px;
+
             margin-right: 5px;
 
             padding: 5px 9px;
 
+            background: #f2f9ff;
+
+            border: 1px solid #d9edf8;
+
+            color: var(--blue);
+
             border-radius: 20px;
 
-            border: 1px solid rgba(99,221,255,0.17);
+            font-size: 9px;
 
-            color: var(--cyan);
-
-            background: rgba(99,221,255,0.035);
-
-            font-size: 10px;
+            font-weight: bold;
         }
 
         /* =====================================================
@@ -879,22 +1044,35 @@
 
         .skills-grid {
             display: grid;
+
             grid-template-columns: repeat(2,1fr);
+
             gap: 15px;
         }
 
         .skill-card {
             padding: 22px;
 
-            background: var(--card);
+            background: white;
 
             border: 1px solid var(--border);
 
             border-radius: 16px;
+
+            box-shadow: 0 7px 25px rgba(57,108,150,0.04);
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow: var(--shadow);
         }
 
         .skill-head {
             display: flex;
+
             justify-content: space-between;
 
             margin-bottom: 11px;
@@ -905,15 +1083,19 @@
         }
 
         .skill-head span {
-            color: var(--cyan);
+            color: var(--blue);
 
             font-size: 10px;
+
+            font-weight: bold;
         }
 
         .progress {
-            height: 6px;
+            width: 100%;
 
-            background: #172637;
+            height: 7px;
+
+            background: #e8f2f8;
 
             border-radius: 20px;
 
@@ -925,8 +1107,8 @@
 
             background: linear-gradient(
                 90deg,
-                var(--cyan2),
-                var(--cyan)
+                var(--blue),
+                #5bd1f4
             );
 
             border-radius: 20px;
@@ -939,11 +1121,15 @@
 
             padding: 25px 28px;
 
-            background: rgba(99,221,255,0.045);
+            background: linear-gradient(
+                135deg,
+                #edf9ff,
+                #f5f2ff
+            );
 
-            border-left: 3px solid var(--cyan);
+            border: 1px solid #dcecf7;
 
-            border-radius: 0 14px 14px 0;
+            border-radius: 17px;
 
             color: var(--text);
 
@@ -951,7 +1137,7 @@
         }
 
         .target-box strong {
-            color: white;
+            color: var(--navy);
         }
 
         /* =====================================================
@@ -959,44 +1145,66 @@
         ===================================================== */
 
         .experience-section {
-            background: var(--bg2);
+            background: #f5fbff;
         }
 
         .experience-grid {
             display: grid;
+
             grid-template-columns: repeat(3,1fr);
+
             gap: 17px;
         }
 
         .experience-card {
             padding: 28px;
 
-            background: var(--card);
+            background: white;
 
             border: 1px solid var(--border);
 
-            border-radius: 18px;
+            border-radius: 19px;
+
+            box-shadow: 0 8px 30px rgba(57,108,150,0.045);
 
             transition: 0.3s;
         }
 
         .experience-card:hover {
             transform: translateY(-7px);
-            border-color: rgba(99,221,255,0.4);
+
+            border-color: #acdff4;
         }
 
         .experience-icon {
-            font-size: 25px;
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
             margin-bottom: 17px;
+
+            border-radius: 13px;
+
+            background: var(--light-blue);
+
+            color: var(--blue);
+
+            font-size: 20px;
         }
 
         .experience-card h3 {
             font-size: 18px;
+
             margin-bottom: 8px;
         }
 
         .experience-card p {
             color: var(--text);
+
             font-size: 13px;
         }
 
@@ -1006,6 +1214,7 @@
 
         .timeline {
             max-width: 800px;
+
             margin: auto;
 
             position: relative;
@@ -1017,12 +1226,17 @@
             position: absolute;
 
             left: 9px;
+
             top: 0;
             bottom: 0;
 
-            width: 1px;
+            width: 2px;
 
-            background: rgba(99,221,255,0.2);
+            background: linear-gradient(
+                to bottom,
+                #b8e8fa,
+                #e8ddff
+            );
         }
 
         .timeline-item {
@@ -1036,58 +1250,75 @@
         .timeline-dot {
             position: absolute;
 
-            left: 3px;
+            left: 2px;
+
             top: 4px;
 
-            width: 13px;
-            height: 13px;
+            width: 16px;
+            height: 16px;
+
+            background: white;
+
+            border: 4px solid var(--blue);
 
             border-radius: 50%;
 
-            background: var(--cyan);
-
-            box-shadow: 0 0 20px rgba(99,221,255,0.55);
+            box-shadow:
+                0 0 0 5px rgba(36,119,255,0.07);
         }
 
         .timeline-item span {
-            color: var(--cyan);
+            color: var(--blue);
 
             font-size: 10px;
-            font-weight: bold;
+
+            font-weight: 800;
 
             letter-spacing: 2px;
         }
 
         .timeline-item h3 {
             font-size: 21px;
+
             margin: 7px 0;
         }
 
         .timeline-item p {
             color: var(--text);
+
             font-size: 13px;
         }
 
         /* =====================================================
-           DREAM
+           CITA-CITA
         ===================================================== */
 
         .dream {
             text-align: center;
 
             padding-top: 130px;
+
             padding-bottom: 130px;
 
             background:
                 radial-gradient(
-                    circle at center,
-                    rgba(99,221,255,0.1),
-                    transparent 45%
+                    circle at 50% 40%,
+                    #e4f7ff,
+                    transparent 42%
+                ),
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f5fbff
                 );
         }
 
+        .dream .section-label {
+            justify-content: center;
+        }
+
         .dream-title {
-            font-size: clamp(40px,7vw,72px);
+            font-size: clamp(42px,7vw,75px);
 
             line-height: 1;
 
@@ -1097,7 +1328,9 @@
         }
 
         .dream-title span {
-            color: var(--cyan);
+            display: block;
+
+            color: var(--blue);
         }
 
         .dream p {
@@ -1115,18 +1348,23 @@
 
             margin-top: 28px;
 
-            padding: 8px 14px;
+            padding: 9px 15px;
+
+            background: white;
+
+            border: 1px solid #d7ebf6;
 
             border-radius: 30px;
 
-            border: 1px solid var(--border);
+            color: var(--blue);
 
-            color: var(--cyan);
+            font-size: 9px;
 
-            font-size: 10px;
-            font-weight: bold;
+            font-weight: 800;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+
+            box-shadow: 0 8px 25px rgba(57,108,150,0.08);
         }
 
         /* =====================================================
@@ -1138,7 +1376,9 @@
 
             text-align: center;
 
-            border-top: 1px solid rgba(255,255,255,0.06);
+            background: #f5fbff;
+
+            border-top: 1px solid #e1eff7;
 
             color: var(--muted);
 
@@ -1146,14 +1386,41 @@
         }
 
         footer strong {
-            color: var(--cyan);
+            color: var(--blue);
         }
 
         /* =====================================================
-           ANIMATION
+           ANIMASI
         ===================================================== */
 
-        @keyframes rotate {
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes floating {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+        @keyframes spin {
+
             from {
                 transform: rotate(0deg);
             }
@@ -1161,26 +1428,15 @@
             to {
                 transform: rotate(360deg);
             }
+
         }
 
         @keyframes progress {
+
             from {
                 width: 0;
             }
-        }
 
-        @keyframes float {
-            0%,100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-9px);
-            }
-        }
-
-        .profile-card {
-            animation: float 5s ease-in-out infinite;
         }
 
         /* =====================================================
@@ -1210,8 +1466,8 @@
                 justify-content: center;
             }
 
-            .visual-wrapper {
-                margin-top: 30px;
+            .hero-visual {
+                margin-top: 35px;
             }
 
             .about-layout {
@@ -1227,43 +1483,12 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        @media (max-width: 650px) {
 
             .stats {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 550px) {
-
-            nav {
-                top: 10px;
-            }
-
-            .hero {
-                padding-left: 6%;
-                padding-right: 6%;
-            }
-
-            .hero h1 {
-                font-size: 47px;
-                letter-spacing: -2px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-            }
-
-            .orbit {
-                width: 280px;
-                height: 280px;
-            }
-
-            .profile-card {
-                width: 260px;
-            }
-
-            .about-layout {
-                gap: 30px;
             }
 
             .info-grid {
@@ -1279,9 +1504,24 @@
                 height: 65px;
             }
 
+            .visual-circle {
+                width: 300px;
+                height: 300px;
+            }
+
+            .profile-card {
+                width: 275px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
             section {
                 padding: 80px 6%;
             }
+
         }
 
     </style>
@@ -1342,35 +1582,58 @@
 
 <section class="hero" id="beranda">
 
-    <div>
+    <div class="hero-content">
 
-        <div class="eyebrow">
+        <div class="welcome">
+
+            <span></span>
+
             MAHASISWA PTIK UNNES
+
         </div>
+
 
         <h1>
+
             Tieska
-            <span>Mirfatus.</span>
+
+            <span>
+                Mirfatus.
+            </span>
+
         </h1>
 
+
         <div class="hero-subtitle">
+
             Pendidikan Teknik Informatika dan Komputer
+
         </div>
 
+
         <p class="hero-description">
-            Saya adalah mahasiswa Universitas Negeri Semarang yang memiliki
-            ketertarikan pada teknologi, pengembangan website, dan pemanfaatan
-            teknologi digital dalam dunia pendidikan.
+
+            Halo! Saya Tieska Mirfatus Sholekah, mahasiswa Universitas
+            Negeri Semarang yang memiliki ketertarikan pada teknologi,
+            pengembangan website, dan pemanfaatan teknologi digital
+            dalam dunia pendidikan.
+
         </p>
+
 
         <div class="hero-buttons">
 
             <a href="#tentang" class="btn btn-primary">
+
                 Kenali Saya →
+
             </a>
 
+
             <a href="#proyek" class="btn btn-secondary">
-                Lihat Perjalanan
+
+                Lihat Proyek
+
             </a>
 
         </div>
@@ -1378,30 +1641,45 @@
     </div>
 
 
-    <div class="visual-wrapper">
+    <div class="hero-visual">
 
-        <div class="orbit"></div>
+        <div class="visual-circle"></div>
+
 
         <div class="profile-card">
 
-            <div class="profile-circle">
+            <div class="profile-photo">
+
                 TM
+
             </div>
 
+
             <h3>
+
                 Tieska Mirfatus Sholekah
+
             </h3>
 
-            <p>
-                PTIK • UNNES
-            </p>
 
             <p>
+
+                PTIK • Universitas Negeri Semarang
+
+            </p>
+
+
+            <p>
+
                 Angkatan 2025
+
             </p>
 
-            <div class="profile-status">
+
+            <div class="profile-badge">
+
                 ✦ TERUS BELAJAR & BERKEMBANG
+
             </div>
 
         </div>
@@ -1417,9 +1695,12 @@
 
 <div class="stats">
 
+
     <div class="stat">
 
-        <strong>2025</strong>
+        <strong>
+            2025
+        </strong>
 
         <span>
             Tahun Angkatan
@@ -1430,10 +1711,12 @@
 
     <div class="stat">
 
-        <strong>PTIK</strong>
+        <strong>
+            PTIK
+        </strong>
 
         <span>
-            Bidang Pendidikan
+            Program Studi
         </span>
 
     </div>
@@ -1441,7 +1724,9 @@
 
     <div class="stat">
 
-        <strong>∞</strong>
+        <strong>
+            ∞
+        </strong>
 
         <span>
             Semangat Belajar
@@ -1449,44 +1734,71 @@
 
     </div>
 
+
 </div>
 
 
 <!-- =====================================================
-     TENTANG
+     TENTANG SAYA
 ===================================================== -->
 
 <section class="about-section" id="tentang">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-label">
+
             01 — TENTANG SAYA
+
         </div>
 
+
         <h2 class="section-title">
-            Mengenal saya <span>lebih dekat.</span>
+
+            Mengenal saya
+
+            <span>
+                lebih dekat.
+            </span>
+
         </h2>
 
 
         <div class="about-layout">
 
-            <p class="about-intro">
 
-                Saya merupakan mahasiswa yang sedang menempuh pendidikan
-                di bidang <strong>Pendidikan Teknik Informatika dan Komputer</strong>.
-                Saya tertarik untuk terus mempelajari perkembangan teknologi
-                dan bagaimana teknologi dapat digunakan untuk memberikan
-                manfaat, khususnya dalam bidang pendidikan.
+            <div>
 
-            </p>
+                <p class="about-text">
+
+                    Saya merupakan mahasiswa yang sedang menempuh pendidikan
+                    di bidang <strong>Pendidikan Teknik Informatika dan Komputer</strong>.
+                    Saya tertarik untuk terus mempelajari perkembangan teknologi
+                    serta bagaimana teknologi dapat memberikan manfaat,
+                    khususnya dalam bidang pendidikan.
+
+                </p>
+
+
+                <div class="about-quote">
+
+                    "Belajar teknologi bukan hanya tentang membuat sesuatu,
+                    tetapi juga tentang bagaimana teknologi dapat memberikan
+                    manfaat bagi orang lain."
+
+                </div>
+
+            </div>
 
 
             <div class="info-grid">
 
+
                 <div class="info-card">
 
-                    <small>NAMA</small>
+                    <small>
+                        NAMA
+                    </small>
 
                     <p>
                         Tieska Mirfatus Sholekah
@@ -1497,7 +1809,9 @@
 
                 <div class="info-card">
 
-                    <small>NIM</small>
+                    <small>
+                        NIM
+                    </small>
 
                     <p>
                         2505090007
@@ -1508,7 +1822,9 @@
 
                 <div class="info-card">
 
-                    <small>PROGRAM STUDI</small>
+                    <small>
+                        PROGRAM STUDI
+                    </small>
 
                     <p>
                         Pendidikan Teknik Informatika dan Komputer
@@ -1519,13 +1835,16 @@
 
                 <div class="info-card">
 
-                    <small>ANGKATAN</small>
+                    <small>
+                        ANGKATAN
+                    </small>
 
                     <p>
                         2025
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -1542,22 +1861,35 @@
 
 <section class="activity-section" id="kegiatan">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-label">
+
             02 — KEGIATAN
+
         </div>
 
+
         <h2 class="section-title">
-            Tidak hanya belajar di <span>kelas.</span>
+
+            Tidak hanya belajar
+
+            <span>
+                di kelas.
+            </span>
+
         </h2>
 
 
         <div class="activity-card">
 
+
             <div class="activity-icon">
+
                 ✦
+
             </div>
+
 
             <div>
 
@@ -1565,15 +1897,20 @@
                     Himpunan Mahasiswa
                 </h3>
 
+
                 <p>
-                    Selain mengikuti perkuliahan, saya aktif berpartisipasi
-                    dalam organisasi kampus, khususnya Himpunan Mahasiswa.
-                    Kegiatan organisasi membantu saya mengembangkan kemampuan
-                    komunikasi, kerja sama, tanggung jawab, manajemen waktu,
-                    serta kemampuan bekerja dalam sebuah tim.
+
+                    Selain mengikuti kegiatan perkuliahan, saya aktif
+                    berpartisipasi dalam organisasi kampus, khususnya
+                    Himpunan Mahasiswa. Melalui kegiatan organisasi,
+                    saya belajar mengenai kerja sama, komunikasi,
+                    tanggung jawab, manajemen waktu, serta bagaimana
+                    bekerja dalam sebuah tim untuk mencapai tujuan bersama.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1588,14 +1925,23 @@
 
 <section id="fokus">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-label">
+
             03 — FOKUS IT
+
         </div>
 
+
         <h2 class="section-title">
-            Bidang yang ingin saya <span>kuasai.</span>
+
+            Bidang yang ingin saya
+
+            <span>
+                kuasai.
+            </span>
+
         </h2>
 
 
@@ -1608,18 +1954,23 @@
                     01 / WEB
                 </div>
 
+
                 <div class="focus-icon">
                     ◈
                 </div>
+
 
                 <h3>
                     Web Development
                 </h3>
 
+
                 <p>
+
                     Mendalami pengembangan website mulai dari tampilan,
                     struktur halaman, hingga sistem yang dapat digunakan
                     untuk menyelesaikan kebutuhan pengguna.
+
                 </p>
 
             </div>
@@ -1631,18 +1982,23 @@
                     02 / EDU
                 </div>
 
+
                 <div class="focus-icon">
                     ◇
                 </div>
+
 
                 <h3>
                     Teknologi Pendidikan
                 </h3>
 
+
                 <p>
+
                     Memanfaatkan teknologi digital untuk menciptakan
                     pengalaman pembelajaran yang lebih menarik,
                     efektif, dan inovatif.
+
                 </p>
 
             </div>
@@ -1654,18 +2010,23 @@
                     03 / AI
                 </div>
 
+
                 <div class="focus-icon">
                     ⬡
                 </div>
+
 
                 <h3>
                     Artificial Intelligence
                 </h3>
 
+
                 <p>
+
                     Mempelajari perkembangan kecerdasan buatan dan
                     potensi penerapannya untuk membantu menyelesaikan
                     permasalahan di bidang pendidikan dan teknologi.
+
                 </p>
 
             </div>
@@ -1684,14 +2045,23 @@
 
 <section class="project-section" id="proyek">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-label">
+
             04 — PROYEK & PEMBELAJARAN
+
         </div>
 
+
         <h2 class="section-title">
-            Belajar dengan <span>mengerjakan.</span>
+
+            Belajar dengan
+
+            <span>
+                mengerjakan.
+            </span>
+
         </h2>
 
 
@@ -1712,19 +2082,32 @@
 
                 </div>
 
+
                 <h3>
                     Website Profil Pribadi
                 </h3>
 
+
                 <p>
-                    Membuat website profil pribadi sebagai media untuk
-                    memperkenalkan identitas, pendidikan, aktivitas,
-                    minat teknologi, serta tujuan karier.
+
+                    Membuat website profil pribadi sebagai media
+                    untuk memperkenalkan identitas, pendidikan,
+                    aktivitas, minat teknologi, serta tujuan karier.
+
                 </p>
 
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">GitHub Pages</span>
+
+                <span class="tag">
+                    HTML
+                </span>
+
+                <span class="tag">
+                    CSS
+                </span>
+
+                <span class="tag">
+                    GitHub Pages
+                </span>
 
             </div>
 
@@ -1743,18 +2126,28 @@
 
                 </div>
 
+
                 <h3>
                     Pemrograman Berorientasi Objek
                 </h3>
 
+
                 <p>
+
                     Mempelajari konsep class, object, inheritance,
                     polymorphism, aggregation, composition, serta
                     penerapannya dalam pengembangan program.
+
                 </p>
 
-                <span class="tag">Python</span>
-                <span class="tag">OOP</span>
+
+                <span class="tag">
+                    Python
+                </span>
+
+                <span class="tag">
+                    OOP
+                </span>
 
             </div>
 
@@ -1773,18 +2166,28 @@
 
                 </div>
 
+
                 <h3>
                     Jaringan Komputer
                 </h3>
 
+
                 <p>
+
                     Mempelajari perancangan jaringan melalui konfigurasi
                     IP address, subnetting, VLAN, routing, dan
                     troubleshooting menggunakan simulasi jaringan.
+
                 </p>
 
-                <span class="tag">Networking</span>
-                <span class="tag">Packet Tracer</span>
+
+                <span class="tag">
+                    Networking
+                </span>
+
+                <span class="tag">
+                    Packet Tracer
+                </span>
 
             </div>
 
@@ -1803,18 +2206,28 @@
 
                 </div>
 
+
                 <h3>
                     Perancangan UI/UX
                 </h3>
 
+
                 <p>
+
                     Mempelajari perancangan antarmuka dan pengalaman
                     pengguna agar sebuah produk digital dapat terlihat
                     menarik, terstruktur, dan mudah digunakan.
+
                 </p>
 
-                <span class="tag">UI/UX</span>
-                <span class="tag">Figma</span>
+
+                <span class="tag">
+                    UI/UX
+                </span>
+
+                <span class="tag">
+                    Figma
+                </span>
 
             </div>
 
@@ -1832,14 +2245,23 @@
 
 <section id="kemampuan">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-label">
+
             05 — KEMAMPUAN & TARGET
+
         </div>
 
+
         <h2 class="section-title">
-            Sedikit demi sedikit menuju <span>expert.</span>
+
+            Sedikit demi sedikit menuju
+
+            <span>
+                expert.
+            </span>
+
         </h2>
 
 
@@ -1860,11 +2282,14 @@
 
                 </div>
 
+
                 <div class="progress">
+
                     <div
                         class="progress-bar"
                         style="width:65%;">
                     </div>
+
                 </div>
 
             </div>
@@ -1884,11 +2309,14 @@
 
                 </div>
 
+
                 <div class="progress">
+
                     <div
                         class="progress-bar"
                         style="width:45%;">
                     </div>
+
                 </div>
 
             </div>
@@ -1908,11 +2336,14 @@
 
                 </div>
 
+
                 <div class="progress">
+
                     <div
                         class="progress-bar"
                         style="width:55%;">
                     </div>
+
                 </div>
 
             </div>
@@ -1932,11 +2363,14 @@
 
                 </div>
 
+
                 <div class="progress">
+
                     <div
                         class="progress-bar"
                         style="width:60%;">
                     </div>
+
                 </div>
 
             </div>
@@ -1956,11 +2390,14 @@
 
                 </div>
 
+
                 <div class="progress">
+
                     <div
                         class="progress-bar"
                         style="width:55%;">
                     </div>
+
                 </div>
 
             </div>
@@ -1980,11 +2417,14 @@
 
                 </div>
 
+
                 <div class="progress">
+
                     <div
                         class="progress-bar"
                         style="width:35%;">
                     </div>
+
                 </div>
 
             </div>
@@ -1995,7 +2435,9 @@
 
         <div class="target-box">
 
-            <strong>Target saya:</strong>
+            <strong>
+                Target pengembangan:
+            </strong>
 
             Saya ingin terus meningkatkan kemampuan di bidang teknologi,
             khususnya Web Development dan Teknologi Pendidikan, hingga
@@ -2015,14 +2457,23 @@
 
 <section class="experience-section">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-label">
+
             06 — PENGALAMAN
+
         </div>
 
+
         <h2 class="section-title">
-            Hal yang membantu saya <span>berkembang.</span>
+
+            Hal yang membantu saya
+
+            <span>
+                berkembang.
+            </span>
+
         </h2>
 
 
@@ -2035,14 +2486,18 @@
                     ◈
                 </div>
 
+
                 <h3>
                     Pemrograman
                 </h3>
 
+
                 <p>
+
                     Mengembangkan kemampuan berpikir logis melalui
                     pembelajaran pemrograman dan penerapan konsep
                     Pemrograman Berorientasi Objek.
+
                 </p>
 
             </div>
@@ -2054,14 +2509,18 @@
                     ⌁
                 </div>
 
+
                 <h3>
                     Jaringan Komputer
                 </h3>
 
+
                 <p>
-                    Belajar menghubungkan perangkat, melakukan konfigurasi
-                    jaringan, subnetting, VLAN, routing, serta
-                    troubleshooting.
+
+                    Belajar menghubungkan perangkat, melakukan
+                    konfigurasi jaringan, subnetting, VLAN,
+                    routing, serta troubleshooting.
+
                 </p>
 
             </div>
@@ -2073,14 +2532,18 @@
                     ✧
                 </div>
 
+
                 <h3>
                     Desain Digital
                 </h3>
 
+
                 <p>
+
                     Mengembangkan kreativitas melalui desain UI/UX,
                     media digital, dan berbagai kebutuhan visual
-                    untuk kegiatan pembelajaran maupun organisasi.
+                    untuk pembelajaran maupun organisasi.
+
                 </p>
 
             </div>
@@ -2099,14 +2562,23 @@
 
 <section id="perjalanan">
 
-    <div class="section-container">
+    <div class="container">
 
         <div class="section-label">
+
             07 — PERJALANAN
+
         </div>
 
+
         <h2 class="section-title">
-            Dari mahasiswa menuju <span>masa depan.</span>
+
+            Dari mahasiswa menuju
+
+            <span>
+                masa depan.
+            </span>
+
         </h2>
 
 
@@ -2117,19 +2589,24 @@
 
                 <div class="timeline-dot"></div>
 
+
                 <span>
                     2025 — SEKARANG
                 </span>
+
 
                 <h3>
                     Memulai Perjalanan di PTIK
                 </h3>
 
+
                 <p>
-                    Memulai pendidikan di Program Studi Pendidikan Teknik
-                    Informatika dan Komputer Universitas Negeri Semarang
-                    untuk mengembangkan pengetahuan di bidang teknologi
-                    dan pendidikan.
+
+                    Memulai pendidikan di Program Studi Pendidikan
+                    Teknik Informatika dan Komputer Universitas
+                    Negeri Semarang untuk mengembangkan pengetahuan
+                    di bidang teknologi dan pendidikan.
+
                 </p>
 
             </div>
@@ -2138,19 +2615,25 @@
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
+
 
                 <span>
                     ORGANISASI
                 </span>
 
+
                 <h3>
                     Berkembang Melalui Organisasi
                 </h3>
 
+
                 <p>
-                    Mengikuti kegiatan Himpunan Mahasiswa untuk melatih
-                    kemampuan komunikasi, kerja sama, tanggung jawab,
-                    manajemen waktu, dan bekerja dalam tim.
+
+                    Mengikuti kegiatan Himpunan Mahasiswa untuk
+                    melatih kemampuan komunikasi, kerja sama,
+                    tanggung jawab, manajemen waktu, dan bekerja
+                    dalam tim.
+
                 </p>
 
             </div>
@@ -2160,18 +2643,23 @@
 
                 <div class="timeline-dot"></div>
 
+
                 <span>
                     MASA DEPAN
                 </span>
+
 
                 <h3>
                     Menjadi Ahli Teknologi Pendidikan
                 </h3>
 
+
                 <p>
+
                     Terus mengembangkan kemampuan Web Development,
                     Teknologi Pendidikan, dan Artificial Intelligence
                     untuk menghasilkan solusi digital yang bermanfaat.
+
                 </p>
 
             </div>
@@ -2190,26 +2678,42 @@
 
 <section class="dream" id="cita">
 
-    <div class="section-container">
+    <div class="container">
 
-        <div class="section-label" style="justify-content:center;">
+        <div class="section-label">
+
             08 — CITA-CITA
+
         </div>
 
+
         <h2 class="dream-title">
-            Menjadi <span>Dosen PTIK.</span>
+
+            Menjadi
+
+            <span>
+                Dosen PTIK.
+            </span>
+
         </h2>
 
+
         <p>
+
             Saya memiliki cita-cita untuk menjadi dosen di bidang
-            Pendidikan Teknik Informatika dan Komputer, khususnya di
-            Universitas Negeri Semarang. Saya ingin membagikan ilmu,
-            pengalaman, dan perkembangan teknologi kepada generasi
-            berikutnya serta ikut berkontribusi dalam dunia pendidikan.
+            Pendidikan Teknik Informatika dan Komputer, khususnya
+            di Universitas Negeri Semarang. Saya ingin membagikan
+            ilmu, pengalaman, dan perkembangan teknologi kepada
+            generasi berikutnya serta ikut berkontribusi dalam
+            dunia pendidikan.
+
         </p>
 
+
         <div class="dream-badge">
+
             BELAJAR • BERKARYA • BERKONTRIBUSI
+
         </div>
 
     </div>
@@ -2224,11 +2728,21 @@
 <footer>
 
     <p>
-        © 2025 <strong>Tieska Mirfatus Sholekah</strong>
+
+        © 2025
+
+        <strong>
+            Tieska Mirfatus Sholekah
+        </strong>
+
     </p>
 
+
     <p>
-        Pendidikan Teknik Informatika dan Komputer — Universitas Negeri Semarang
+
+        Pendidikan Teknik Informatika dan Komputer —
+        Universitas Negeri Semarang
+
     </p>
 
 </footer>
