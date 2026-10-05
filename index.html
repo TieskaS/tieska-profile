@@ -21,7 +21,10 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* =========================
+           NAVBAR
+        ========================= */
+
         nav {
             position: fixed;
             top: 0;
@@ -52,7 +55,7 @@
 
         nav ul {
             display: flex;
-            gap: 30px;
+            gap: 28px;
             list-style: none;
         }
 
@@ -67,7 +70,11 @@
             color: #66d9ff;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
             min-height: 100vh;
             padding: 150px 8% 80px;
@@ -75,11 +82,21 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
             gap: 60px;
 
             background:
-                radial-gradient(circle at 80% 30%, rgba(102,217,255,0.13), transparent 30%),
-                radial-gradient(circle at 10% 80%, rgba(91,76,255,0.12), transparent 30%);
+                radial-gradient(
+                    circle at 80% 30%,
+                    rgba(102,217,255,0.13),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(91,76,255,0.12),
+                    transparent 30%
+                );
         }
 
         .hero-content {
@@ -88,15 +105,20 @@
 
         .hero-label {
             color: #66d9ff;
+
             font-size: 14px;
             font-weight: bold;
+
             letter-spacing: 4px;
+
             margin-bottom: 15px;
         }
 
         .hero h1 {
             font-size: clamp(48px, 7vw, 85px);
+
             line-height: 1;
+
             margin-bottom: 20px;
         }
 
@@ -107,15 +129,21 @@
 
         .hero h2 {
             font-size: 24px;
+
             font-weight: 500;
+
             color: #d8e3ef;
+
             margin-bottom: 20px;
         }
 
         .hero-description {
             max-width: 600px;
+
             color: #9eafc3;
+
             font-size: 16px;
+
             margin-bottom: 35px;
         }
 
@@ -128,9 +156,13 @@
         .btn-primary,
         .btn-secondary {
             padding: 14px 24px;
+
             border-radius: 10px;
+
             text-decoration: none;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
@@ -141,20 +173,28 @@
 
         .btn-primary:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 30px rgba(102,217,255,0.25);
+
+            box-shadow:
+                0 10px 30px rgba(102,217,255,0.25);
         }
 
         .btn-secondary {
             border: 1px solid rgba(102,217,255,0.5);
+
             color: #66d9ff;
         }
 
         .btn-secondary:hover {
             background: rgba(102,217,255,0.08);
+
             transform: translateY(-4px);
         }
 
-        /* PROFILE CARD */
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
         .hero-card {
             width: 320px;
             min-width: 320px;
@@ -164,12 +204,15 @@
             text-align: center;
 
             background: rgba(255,255,255,0.05);
+
             border: 1px solid rgba(255,255,255,0.1);
+
             border-radius: 25px;
 
             backdrop-filter: blur(20px);
 
-            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            box-shadow:
+                0 30px 80px rgba(0,0,0,0.3);
         }
 
         .profile-placeholder {
@@ -189,50 +232,69 @@
 
             color: #07111f;
 
-            background: linear-gradient(
-                135deg,
-                #66d9ff,
-                #8d7cff
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #66d9ff,
+                    #8d7cff
+                );
 
-            box-shadow: 0 0 50px rgba(102,217,255,0.2);
+            box-shadow:
+                0 0 50px rgba(102,217,255,0.2);
         }
 
         .hero-card p {
             color: #66d9ff;
+
             font-weight: bold;
+
             letter-spacing: 2px;
         }
 
         .hero-card span {
             color: #8799ad;
+
             font-size: 13px;
         }
 
-        /* GENERAL SECTION */
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
         section:not(.hero) {
             padding: 100px 8%;
         }
 
         .section-label {
             color: #66d9ff;
+
             font-size: 13px;
+
             font-weight: bold;
+
             letter-spacing: 3px;
+
             margin-bottom: 10px;
         }
 
         .section-title {
             font-size: 40px;
+
             margin-bottom: 20px;
         }
 
         .section-description {
             color: #9eafc3;
+
             max-width: 700px;
         }
 
-        /* ABOUT */
+
+        /* =========================
+           ABOUT
+        ========================= */
+
         #about {
             background: #0a1728;
         }
@@ -241,16 +303,22 @@
             margin-top: 50px;
 
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
             gap: 25px;
         }
 
         .info-card {
             padding: 30px;
 
-            background: rgba(255,255,255,0.04);
+            background:
+                rgba(255,255,255,0.04);
 
-            border: 1px solid rgba(255,255,255,0.08);
+            border:
+                1px solid rgba(255,255,255,0.08);
+
             border-radius: 18px;
 
             transition: 0.3s;
@@ -258,11 +326,14 @@
 
         .info-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(102,217,255,0.35);
+
+            border-color:
+                rgba(102,217,255,0.35);
         }
 
         .info-card h3 {
             color: #66d9ff;
+
             margin-bottom: 10px;
         }
 
@@ -270,66 +341,28 @@
             color: #a9b8c9;
         }
 
-        /* FOCUS */
-        .focus-grid {
-            margin-top: 50px;
 
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+        /* =========================
+           ACTIVITY
+        ========================= */
 
-        .focus-card {
-            padding: 35px;
-
-            min-height: 250px;
-
-            border-radius: 20px;
-
-            background: linear-gradient(
-                145deg,
-                rgba(255,255,255,0.06),
-                rgba(255,255,255,0.02)
-            );
-
-            border: 1px solid rgba(255,255,255,0.08);
-
-            transition: 0.3s;
-        }
-
-        .focus-card:hover {
-            transform: translateY(-8px);
-            border-color: #66d9ff;
-        }
-
-        .focus-number {
-            color: #66d9ff;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .focus-card h3 {
-            margin: 20px 0 12px;
-            font-size: 22px;
-        }
-
-        .focus-card p {
-            color: #9eafc3;
-        }
-
-        /* ACTIVITY */
         #activity {
-            background: #0a1728;
+            background: #07111f;
         }
 
         .activity-box {
             margin-top: 45px;
+
             padding: 35px;
 
-            border-left: 3px solid #66d9ff;
+            border-left:
+                3px solid #66d9ff;
 
-            background: rgba(255,255,255,0.04);
-            border-radius: 0 18px 18px 0;
+            background:
+                rgba(255,255,255,0.04);
+
+            border-radius:
+                0 18px 18px 0;
         }
 
         .activity-box h3 {
@@ -340,15 +373,213 @@
             color: #a9b8c9;
         }
 
-        /* GOAL */
+
+        /* =========================
+           IT FOCUS
+        ========================= */
+
+        #focus {
+            background: #0a1728;
+        }
+
+        .focus-grid {
+            margin-top: 50px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .focus-card {
+            padding: 35px;
+
+            min-height: 250px;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.06),
+                    rgba(255,255,255,0.02)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            transition: 0.3s;
+        }
+
+        .focus-card:hover {
+            transform: translateY(-8px);
+
+            border-color: #66d9ff;
+        }
+
+        .focus-number {
+            color: #66d9ff;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .focus-card h3 {
+            margin: 20px 0 12px;
+
+            font-size: 22px;
+        }
+
+        .focus-card p {
+            color: #9eafc3;
+        }
+
+
+        /* =========================
+           JOURNEY
+        ========================= */
+
+        #journey {
+            background: #07111f;
+        }
+
+        .timeline {
+            position: relative;
+
+            max-width: 900px;
+
+            margin: 55px auto 0;
+
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 17px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 2px;
+
+            background:
+                rgba(102,217,255,0.25);
+        }
+
+        .timeline-item {
+            position: relative;
+
+            display: flex;
+
+            gap: 30px;
+
+            margin-bottom: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+
+            left: -40px;
+
+            width: 36px;
+            height: 36px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #07111f;
+
+            border:
+                2px solid #66d9ff;
+
+            color: #66d9ff;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            z-index: 2;
+        }
+
+        .timeline-content {
+            width: 100%;
+
+            padding: 25px 30px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateX(8px);
+
+            border-color:
+                rgba(102,217,255,0.4);
+
+            background:
+                rgba(102,217,255,0.05);
+        }
+
+        .timeline-content span {
+            color: #66d9ff;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .timeline-content h3 {
+            margin: 10px 0;
+
+            font-size: 21px;
+        }
+
+        .timeline-content p {
+            color: #9eafc3;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           FUTURE GOAL
+        ========================= */
+
+        #goal {
+            background: #0a1728;
+        }
+
         .goal {
             text-align: center;
+
             max-width: 850px;
+
             margin: auto;
         }
 
         .goal h2 {
             font-size: 42px;
+
             margin-bottom: 25px;
         }
 
@@ -358,17 +589,25 @@
 
         .goal p {
             color: #9eafc3;
+
             font-size: 17px;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             padding: 35px 8%;
+
             text-align: center;
 
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top:
+                1px solid rgba(255,255,255,0.08);
 
             color: #718398;
+
             font-size: 13px;
         }
 
@@ -376,7 +615,11 @@
             color: #66d9ff;
         }
 
-        /* RESPONSIVE */
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
         @media (max-width: 850px) {
 
             nav ul {
@@ -385,11 +628,13 @@
 
             .hero {
                 flex-direction: column;
+
                 text-align: center;
             }
 
             .hero-description {
                 margin-left: auto;
+
                 margin-right: auto;
             }
 
@@ -404,36 +649,84 @@
 
             .hero-card {
                 width: 280px;
+
                 min-width: 280px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <!-- NAVBAR -->
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
     <nav>
+
         <div class="logo">
             T<span>M</span>
         </div>
 
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#activity">Activity</a></li>
-            <li><a href="#focus">IT Focus</a></li>
-            <li><a href="#goal">Goal</a></li>
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#activity">
+                    Activity
+                </a>
+            </li>
+
+            <li>
+                <a href="#focus">
+                    IT Focus
+                </a>
+            </li>
+
+            <li>
+                <a href="#journey">
+                    Journey
+                </a>
+            </li>
+
+            <li>
+                <a href="#goal">
+                    Goal
+                </a>
+            </li>
+
         </ul>
+
     </nav>
 
 
-    <!-- HERO -->
-    <section class="hero" id="home">
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section
+        class="hero"
+        id="home"
+    >
 
         <div class="hero-content">
 
-            <p class="hero-label">HELLO, I'M</p>
+            <p class="hero-label">
+                HELLO, I'M
+            </p>
 
             <h1>
                 Tieska Mirfatus
@@ -453,11 +746,17 @@
 
             <div class="hero-buttons">
 
-                <a href="#about" class="btn-primary">
+                <a
+                    href="#about"
+                    class="btn-primary"
+                >
                     Explore My Profile
                 </a>
 
-                <a href="#focus" class="btn-secondary">
+                <a
+                    href="#focus"
+                    class="btn-secondary"
+                >
                     My IT Focus ↓
                 </a>
 
@@ -472,7 +771,9 @@
                 TM
             </div>
 
-            <p>PTIK UNNES</p>
+            <p>
+                PTIK UNNES
+            </p>
 
             <span>
                 2025 • Informatics Education
@@ -483,10 +784,15 @@
     </section>
 
 
-    <!-- ABOUT -->
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
     <section id="about">
 
-        <p class="section-label">01 — ABOUT ME</p>
+        <p class="section-label">
+            01 — ABOUT ME
+        </p>
 
         <h2 class="section-title">
             Who am I?
@@ -502,9 +808,12 @@
 
         <div class="about-grid">
 
+
             <div class="info-card">
 
-                <h3>Nama</h3>
+                <h3>
+                    Nama
+                </h3>
 
                 <p>
                     Tieska Mirfatus Sholekah
@@ -515,7 +824,9 @@
 
             <div class="info-card">
 
-                <h3>NIM</h3>
+                <h3>
+                    NIM
+                </h3>
 
                 <p>
                     2505090007
@@ -526,7 +837,9 @@
 
             <div class="info-card">
 
-                <h3>Program Studi</h3>
+                <h3>
+                    Program Studi
+                </h3>
 
                 <p>
                     Pendidikan Teknik Informatika dan Komputer
@@ -537,7 +850,9 @@
 
             <div class="info-card">
 
-                <h3>Angkatan</h3>
+                <h3>
+                    Angkatan
+                </h3>
 
                 <p>
                     2025
@@ -545,15 +860,21 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- ACTIVITY -->
+    <!-- =========================
+         ACTIVITY
+    ========================= -->
+
     <section id="activity">
 
-        <p class="section-label">02 — BEYOND CAMPUS</p>
+        <p class="section-label">
+            02 — BEYOND CAMPUS
+        </p>
 
         <h2 class="section-title">
             My Activity
@@ -563,7 +884,7 @@
             Selain mengikuti kegiatan perkuliahan, saya aktif
             mengikuti kegiatan organisasi mahasiswa untuk
             mengembangkan kemampuan komunikasi, kerja sama,
-            kepemimpinan, dan pengalaman berorganisasi.
+            tanggung jawab, dan pengalaman berorganisasi.
         </p>
 
 
@@ -585,10 +906,15 @@
     </section>
 
 
-    <!-- IT FOCUS -->
+    <!-- =========================
+         IT FOCUS
+    ========================= -->
+
     <section id="focus">
 
-        <p class="section-label">03 — IT FOCUS</p>
+        <p class="section-label">
+            03 — IT FOCUS
+        </p>
 
         <h2 class="section-title">
             What I Want to Master
@@ -602,6 +928,7 @@
 
 
         <div class="focus-grid">
+
 
             <div class="focus-card">
 
@@ -659,18 +986,134 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- GOAL -->
+    <!-- =========================
+         JOURNEY
+    ========================= -->
+
+    <section id="journey">
+
+        <p class="section-label">
+            04 — MY JOURNEY
+        </p>
+
+        <h2 class="section-title">
+            My Learning Journey
+        </h2>
+
+        <p class="section-description">
+            Setiap proses pembelajaran menjadi bagian dari perjalanan
+            saya untuk berkembang di bidang teknologi dan pendidikan.
+        </p>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    01
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        2025 — NOW
+                    </span>
+
+                    <h3>
+                        Starting My PTIK Journey
+                    </h3>
+
+                    <p>
+                        Memulai perjalanan sebagai mahasiswa
+                        Pendidikan Teknik Informatika dan Komputer
+                        di Universitas Negeri Semarang serta
+                        mengenal lebih dalam dunia teknologi informasi
+                        dan pendidikan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    02
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        ORGANIZATION
+                    </span>
+
+                    <h3>
+                        Growing Through Organization
+                    </h3>
+
+                    <p>
+                        Mengembangkan kemampuan komunikasi,
+                        kerja sama, tanggung jawab, dan kepemimpinan
+                        melalui kegiatan organisasi mahasiswa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot">
+                    03
+                </div>
+
+                <div class="timeline-content">
+
+                    <span>
+                        FUTURE
+                    </span>
+
+                    <h3>
+                        Becoming a Technology Expert
+                    </h3>
+
+                    <p>
+                        Terus meningkatkan kemampuan dalam
+                        Web Development, Educational Technology,
+                        dan Artificial Intelligence hingga mampu
+                        menghasilkan solusi teknologi yang bermanfaat.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FUTURE GOAL
+    ========================= -->
+
     <section id="goal">
 
         <div class="goal">
 
             <p class="section-label">
-                04 — FUTURE GOAL
+                05 — FUTURE GOAL
             </p>
 
             <h2>
@@ -691,14 +1134,22 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
 
         © 2026
-        <span>Tieska Mirfatus Sholekah</span>
+
+        <span>
+            Tieska Mirfatus Sholekah
+        </span>
+
         — PTIK UNNES
 
     </footer>
+
 
 </body>
 </html>
