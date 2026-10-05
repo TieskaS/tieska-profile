@@ -4,148 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tieska Mirfatus Sholekah | Personal Portfolio</title>
+    <title>Tieska Mirfatus Sholekah | PTIK UNNES</title>
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #07111f;
-            color: #eef5ff;
-            line-height: 1.7;
+            color: #f5f9ff;
+            line-height: 1.6;
         }
 
-        /* ================= NAVBAR ================= */
-
+        /* NAVBAR */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(7, 17, 31, 0.82);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
-            padding: 18px 25px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            padding: 20px 8%;
+
+            background: rgba(7, 17, 31, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .logo {
-            font-size: 25px;
-            font-weight: 900;
+            font-size: 22px;
+            font-weight: bold;
             letter-spacing: 2px;
+        }
+
+        .logo span {
             color: #66d9ff;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
-            gap: 28px;
+            gap: 30px;
+            list-style: none;
         }
 
-        .nav-links a {
-            color: #d9e5f5;
+        nav ul li a {
+            color: #c8d5e5;
             text-decoration: none;
             font-size: 14px;
-            font-weight: bold;
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
+        nav ul li a:hover {
             color: #66d9ff;
         }
 
-        /* ================= HERO ================= */
-
+        /* HERO */
         .hero {
             min-height: 100vh;
-            position: relative;
-            overflow: hidden;
+            padding: 150px 8% 80px;
 
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            gap: 60px;
 
             background:
-                radial-gradient(circle at 80% 20%, rgba(65, 169, 255, 0.20), transparent 30%),
-                radial-gradient(circle at 15% 80%, rgba(119, 92, 255, 0.15), transparent 30%),
-                #07111f;
+                radial-gradient(circle at 80% 30%, rgba(102,217,255,0.13), transparent 30%),
+                radial-gradient(circle at 10% 80%, rgba(91,76,255,0.12), transparent 30%);
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 420px;
-            height: 420px;
-            border: 1px solid rgba(102,217,255,0.15);
-            border-radius: 50%;
-            right: -120px;
-            top: 100px;
+        .hero-content {
+            max-width: 700px;
         }
 
-        .hero-container {
-            width: 100%;
-            max-width: 1150px;
-            margin: auto;
-            padding: 130px 25px 80px;
-
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .small-title {
+        .hero-label {
             color: #66d9ff;
             font-size: 14px;
             font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 6vw, 78px);
-            line-height: 1.05;
-            margin-bottom: 25px;
+            font-size: clamp(48px, 7vw, 85px);
+            line-height: 1;
+            margin-bottom: 20px;
         }
 
         .hero h1 span {
+            display: block;
             color: #66d9ff;
         }
 
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #d8e3ef;
+            margin-bottom: 20px;
+        }
+
         .hero-description {
-            color: #aebdd0;
-            font-size: 18px;
-            max-width: 650px;
-            margin-bottom: 30px;
+            max-width: 600px;
+            color: #9eafc3;
+            font-size: 16px;
+            margin-bottom: 35px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 14px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 12px;
+        .btn-primary,
+        .btn-secondary {
+            padding: 14px 24px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
@@ -153,502 +136,329 @@
 
         .btn-primary {
             background: #66d9ff;
-            color: #06111e;
+            color: #07111f;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(102,217,255,0.25);
         }
 
-        .btn-outline {
-            border: 1px solid rgba(255,255,255,0.18);
-            color: white;
-            background: rgba(255,255,255,0.04);
-        }
-
-        .btn-outline:hover {
-            border-color: #66d9ff;
+        .btn-secondary {
+            border: 1px solid rgba(102,217,255,0.5);
             color: #66d9ff;
         }
 
-        /* ================= PROFILE CARD ================= */
-
-        .profile-wrapper {
-            position: relative;
+        .btn-secondary:hover {
+            background: rgba(102,217,255,0.08);
+            transform: translateY(-4px);
         }
 
-        .profile-card {
+        /* PROFILE CARD */
+        .hero-card {
+            width: 320px;
+            min-width: 320px;
+
             padding: 35px;
-            border-radius: 30px;
-
-            background: linear-gradient(
-                145deg,
-                rgba(255,255,255,0.11),
-                rgba(255,255,255,0.035)
-            );
-
-            border: 1px solid rgba(255,255,255,0.13);
-            backdrop-filter: blur(20px);
-
-            box-shadow: 0 30px 80px rgba(0,0,0,0.35);
 
             text-align: center;
+
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+
+            backdrop-filter: blur(20px);
+
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
         }
 
-        .avatar {
-            width: 155px;
-            height: 155px;
-            margin: 0 auto 25px;
+        .profile-placeholder {
+            width: 180px;
+            height: 180px;
 
-            border-radius: 50%;
+            margin: 0 auto 25px;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            font-size: 52px;
-            font-weight: 900;
+            border-radius: 50%;
 
-            color: white;
+            font-size: 55px;
+            font-weight: bold;
 
-            background:
-                linear-gradient(135deg, #2679ff, #66d9ff);
+            color: #07111f;
 
-            box-shadow:
-                0 0 0 10px rgba(102,217,255,0.08),
-                0 0 50px rgba(102,217,255,0.20);
+            background: linear-gradient(
+                135deg,
+                #66d9ff,
+                #8d7cff
+            );
+
+            box-shadow: 0 0 50px rgba(102,217,255,0.2);
         }
 
-        .profile-card h2 {
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
-
-        .profile-card > p {
-            color: #9eafc4;
-        }
-
-        .profile-info {
-            margin-top: 25px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        .profile-info div {
-            padding: 13px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-        }
-
-        .profile-info strong {
-            display: block;
+        .hero-card p {
             color: #66d9ff;
-            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
 
-        .profile-info span {
+        .hero-card span {
+            color: #8799ad;
             font-size: 13px;
-            color: #dbe6f3;
         }
 
-        /* ================= GENERAL SECTION ================= */
-
-        section {
-            padding: 100px 25px;
+        /* GENERAL SECTION */
+        section:not(.hero) {
+            padding: 100px 8%;
         }
 
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        .section-heading {
-            margin-bottom: 50px;
-        }
-
-        .section-heading small {
+        .section-label {
             color: #66d9ff;
             font-size: 13px;
             font-weight: bold;
             letter-spacing: 3px;
+            margin-bottom: 10px;
         }
 
-        .section-heading h2 {
+        .section-title {
             font-size: 40px;
-            margin-top: 8px;
+            margin-bottom: 20px;
         }
 
-        .section-heading p {
-            color: #8fa1b7;
-            max-width: 650px;
-            margin-top: 10px;
+        .section-description {
+            color: #9eafc3;
+            max-width: 700px;
         }
 
-        /* ================= ABOUT ================= */
+        /* ABOUT */
+        #about {
+            background: #0a1728;
+        }
 
         .about-grid {
+            margin-top: 50px;
+
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
-        .glass-card {
+        .info-card {
             padding: 30px;
-            border-radius: 22px;
 
-            background: rgba(255,255,255,0.045);
+            background: rgba(255,255,255,0.04);
+
             border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
 
             transition: 0.3s;
         }
 
-        .glass-card:hover {
-            transform: translateY(-5px);
+        .info-card:hover {
+            transform: translateY(-6px);
             border-color: rgba(102,217,255,0.35);
         }
 
-        .glass-card p {
-            color: #aebdd0;
-        }
-
-        .identity-list {
-            display: grid;
-            gap: 13px;
-        }
-
-        .identity-item {
-            padding: 15px;
-            background: rgba(255,255,255,0.04);
-            border-radius: 13px;
-        }
-
-        .identity-item small {
+        .info-card h3 {
             color: #66d9ff;
-            display: block;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
-        .identity-item strong {
-            color: #edf5ff;
+        .info-card p {
+            color: #a9b8c9;
         }
 
-        /* ================= ACTIVITY ================= */
+        /* FOCUS */
+        .focus-grid {
+            margin-top: 50px;
 
-        .activity-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 25px;
         }
 
-        .activity-card {
-            padding: 30px;
-            border-radius: 22px;
+        .focus-card {
+            padding: 35px;
+
+            min-height: 250px;
+
+            border-radius: 20px;
 
             background: linear-gradient(
                 145deg,
-                rgba(255,255,255,0.075),
-                rgba(255,255,255,0.025)
+                rgba(255,255,255,0.06),
+                rgba(255,255,255,0.02)
             );
 
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .activity-number {
-            font-size: 14px;
-            color: #66d9ff;
-            font-weight: bold;
-        }
-
-        .activity-icon {
-            font-size: 38px;
-            margin: 20px 0 10px;
-        }
-
-        .activity-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .activity-card p {
-            color: #8fa1b7;
-            font-size: 14px;
-        }
-
-        /* ================= IT FOCUS ================= */
-
-        .it-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .it-card {
-            position: relative;
-            overflow: hidden;
-
-            padding: 32px;
-            border-radius: 24px;
-
-            background: #0d1b2d;
             border: 1px solid rgba(255,255,255,0.08);
 
             transition: 0.3s;
         }
 
-        .it-card:hover {
+        .focus-card:hover {
             transform: translateY(-8px);
             border-color: #66d9ff;
         }
 
-        .it-icon {
-            width: 55px;
-            height: 55px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 15px;
-
-            background: rgba(102,217,255,0.1);
-            font-size: 26px;
-
-            margin-bottom: 22px;
+        .focus-number {
+            color: #66d9ff;
+            font-size: 14px;
+            font-weight: bold;
         }
 
-        .it-card h3 {
+        .focus-card h3 {
+            margin: 20px 0 12px;
+            font-size: 22px;
+        }
+
+        .focus-card p {
+            color: #9eafc3;
+        }
+
+        /* ACTIVITY */
+        #activity {
+            background: #0a1728;
+        }
+
+        .activity-box {
+            margin-top: 45px;
+            padding: 35px;
+
+            border-left: 3px solid #66d9ff;
+
+            background: rgba(255,255,255,0.04);
+            border-radius: 0 18px 18px 0;
+        }
+
+        .activity-box h3 {
             margin-bottom: 10px;
         }
 
-        .it-card p {
-            color: #8fa1b7;
-            font-size: 14px;
+        .activity-box p {
+            color: #a9b8c9;
         }
 
-        .tag {
-            display: inline-block;
-            margin-top: 18px;
-            padding: 6px 10px;
-            border-radius: 20px;
-
-            background: rgba(102,217,255,0.08);
-            color: #66d9ff;
-
-            font-size: 11px;
-            font-weight: bold;
-        }
-
-        /* ================= ROADMAP ================= */
-
-        .roadmap {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .roadmap-item {
-            position: relative;
-            padding: 25px;
-            border-left: 2px solid #66d9ff;
-            background: rgba(255,255,255,0.035);
-            border-radius: 0 15px 15px 0;
-        }
-
-        .roadmap-item span {
-            color: #66d9ff;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .roadmap-item h3 {
-            margin: 8px 0;
-            font-size: 18px;
-        }
-
-        .roadmap-item p {
-            color: #8496ac;
-            font-size: 13px;
-        }
-
-        /* ================= FUTURE ================= */
-
-        .future {
-            padding: 60px;
-            border-radius: 30px;
-
-            background:
-                radial-gradient(
-                    circle at 80% 20%,
-                    rgba(102,217,255,0.18),
-                    transparent 35%
-                ),
-                #10243c;
-
-            border: 1px solid rgba(102,217,255,0.15);
-        }
-
-        .future h2 {
-            font-size: 42px;
-            margin-bottom: 18px;
-        }
-
-        .future p {
-            color: #b5c5d8;
-            max-width: 850px;
-        }
-
-        .quote {
-            margin-top: 30px;
-            padding-left: 20px;
-            border-left: 3px solid #66d9ff;
-            color: #e8f5ff;
-            font-style: italic;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            padding: 35px 20px;
+        /* GOAL */
+        .goal {
             text-align: center;
-            background: #040b14;
-            color: #71839a;
-            font-size: 13px;
+            max-width: 850px;
+            margin: auto;
         }
 
-        footer strong {
+        .goal h2 {
+            font-size: 42px;
+            margin-bottom: 25px;
+        }
+
+        .goal h2 span {
             color: #66d9ff;
         }
 
-        /* ================= RESPONSIVE ================= */
+        .goal p {
+            color: #9eafc3;
+            font-size: 17px;
+        }
 
+        /* FOOTER */
+        footer {
+            padding: 35px 8%;
+            text-align: center;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            color: #718398;
+            font-size: 13px;
+        }
+
+        footer span {
+            color: #66d9ff;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 850px) {
 
-            .hero-container,
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .activity-grid,
-            .it-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .roadmap {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .nav-links {
+            nav ul {
                 display: none;
             }
-        }
 
-        @media (max-width: 600px) {
-
-            .hero-container {
-                padding-top: 110px;
+            .hero {
+                flex-direction: column;
+                text-align: center;
             }
 
-            .activity-grid,
-            .it-grid,
-            .roadmap {
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-grid,
+            .focus-grid {
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                font-size: 45px;
-            }
-
-            .section-heading h2 {
-                font-size: 32px;
-            }
-
-            .future {
-                padding: 35px 25px;
-            }
-
-            .future h2 {
-                font-size: 32px;
-            }
-
-            .profile-info {
-                grid-template-columns: 1fr;
+            .hero-card {
+                width: 280px;
+                min-width: 280px;
             }
         }
-
     </style>
 </head>
 
 <body>
 
-
-<!-- ================= NAVBAR ================= -->
-
-<nav>
-
-    <div class="nav-container">
-
+    <!-- NAVBAR -->
+    <nav>
         <div class="logo">
-            TMS.
+            T<span>M</span>
         </div>
 
-        <div class="nav-links">
-
-            <a href="#profil">Home</a>
-
-            <a href="#tentang">Profil</a>
-
-            <a href="#aktivitas">Aktivitas</a>
-
-            <a href="#bidang">IT Focus</a>
-
-            <a href="#cita-cita">Future Goal</a>
-
-        </div>
-
-    </div>
-
-</nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#activity">Activity</a></li>
+            <li><a href="#focus">IT Focus</a></li>
+            <li><a href="#goal">Goal</a></li>
+        </ul>
+    </nav>
 
 
-<!-- ================= HERO ================= -->
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-<header class="hero" id="profil">
+        <div class="hero-content">
 
-    <div class="hero-container">
-
-
-        <div>
-
-            <div class="small-title">
-                PERSONAL PORTFOLIO • PTIK UNNES
-            </div>
+            <p class="hero-label">HELLO, I'M</p>
 
             <h1>
-                Building my
-                <span>future</span>
-                through technology.
+                Tieska Mirfatus
+                <span>Sholekah.</span>
             </h1>
 
+            <h2>
+                Future Educator & Technology Enthusiast
+            </h2>
+
             <p class="hero-description">
-
-                Halo, saya <strong>Tieska Mirfatus Sholekah</strong>,
-                mahasiswa Pendidikan Teknik Informatika dan Komputer
-                Universitas Negeri Semarang. Saya tertarik pada
-                teknologi digital dan bagaimana teknologi dapat
-                dimanfaatkan untuk mendukung dunia pendidikan.
-
+                Mahasiswa Pendidikan Teknik Informatika dan Komputer
+                Universitas Negeri Semarang yang sedang membangun
+                kemampuan di bidang teknologi, pengembangan web,
+                dan teknologi pendidikan.
             </p>
 
             <div class="hero-buttons">
 
-                <a href="#tentang" class="btn btn-primary">
-                    Kenali Saya →
+                <a href="#about" class="btn-primary">
+                    Explore My Profile
                 </a>
 
-                <a href="#bidang" class="btn btn-outline">
-                    Eksplorasi Bidang IT
+                <a href="#focus" class="btn-secondary">
+                    My IT Focus ↓
                 </a>
 
             </div>
@@ -656,550 +466,239 @@
         </div>
 
 
-        <div class="profile-wrapper">
+        <div class="hero-card">
 
-            <div class="profile-card">
-
-                <div class="avatar">
-                    TM
-                </div>
-
-                <h2>
-                    Tieska Mirfatus Sholekah
-                </h2>
-
-                <p>
-                    Pendidikan Teknik Informatika dan Komputer
-                </p>
-
-                <div class="profile-info">
-
-                    <div>
-                        <strong>NIM</strong>
-                        <span>2505090007</span>
-                    </div>
-
-                    <div>
-                        <strong>Angkatan</strong>
-                        <span>2025</span>
-                    </div>
-
-                    <div>
-                        <strong>Universitas</strong>
-                        <span>UNNES</span>
-                    </div>
-
-                    <div>
-                        <strong>Fokus</strong>
-                        <span>Technology</span>
-                    </div>
-
-                </div>
-
+            <div class="profile-placeholder">
+                TM
             </div>
 
-        </div>
+            <p>PTIK UNNES</p>
 
-    </div>
-
-</header>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="tentang">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <small>01 — ABOUT ME</small>
-
-            <h2>Tentang Saya</h2>
-
-            <p>
-                Mengenal lebih dekat perjalanan, identitas,
-                dan ketertarikan saya terhadap teknologi.
-            </p>
+            <span>
+                2025 • Informatics Education
+            </span>
 
         </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <p class="section-label">01 — ABOUT ME</p>
+
+        <h2 class="section-title">
+            Who am I?
+        </h2>
+
+        <p class="section-description">
+            Saya adalah mahasiswa yang memiliki ketertarikan
+            terhadap perkembangan teknologi dan bagaimana teknologi
+            dapat digunakan untuk menciptakan pengalaman belajar
+            yang lebih menarik dan efektif.
+        </p>
 
 
         <div class="about-grid">
 
+            <div class="info-card">
 
-            <div class="glass-card">
+                <h3>Nama</h3>
 
                 <p>
+                    Tieska Mirfatus Sholekah
+                </p>
 
-                    Saya merupakan mahasiswa Program Studi
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>NIM</h3>
+
+                <p>
+                    2505090007
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>Program Studi</h3>
+
+                <p>
                     Pendidikan Teknik Informatika dan Komputer
-                    (PTIK) Universitas Negeri Semarang angkatan
-                    2025.
-
-                    <br><br>
-
-                    Selain fokus pada kegiatan perkuliahan, saya
-                    juga aktif mengikuti organisasi di kampus,
-                    khususnya Himpunan Mahasiswa. Bagi saya,
-                    organisasi menjadi ruang untuk belajar
-                    bekerja sama, berkomunikasi, bertanggung jawab,
-                    dan mengembangkan kemampuan di luar kegiatan
-                    akademik.
-
-                    <br><br>
-
-                    Saya ingin terus mengembangkan kemampuan
-                    teknologi sekaligus memahami bagaimana
-                    teknologi dapat memberikan manfaat bagi
-                    pendidikan.
-
                 </p>
 
             </div>
 
 
-            <div class="glass-card">
+            <div class="info-card">
 
-                <div class="identity-list">
+                <h3>Angkatan</h3>
 
-                    <div class="identity-item">
-
-                        <small>Nama Lengkap</small>
-
-                        <strong>
-                            Tieska Mirfatus Sholekah
-                        </strong>
-
-                    </div>
-
-
-                    <div class="identity-item">
-
-                        <small>Nomor Induk Mahasiswa</small>
-
-                        <strong>
-                            2505090007
-                        </strong>
-
-                    </div>
-
-
-                    <div class="identity-item">
-
-                        <small>Program Studi</small>
-
-                        <strong>
-                            Pendidikan Teknik Informatika dan Komputer
-                        </strong>
-
-                    </div>
-
-
-                    <div class="identity-item">
-
-                        <small>Tahun Angkatan</small>
-
-                        <strong>
-                            2025
-                        </strong>
-
-                    </div>
-
-
-                    <div class="identity-item">
-
-                        <small>Kesibukan Selain Kuliah</small>
-
-                        <strong>
-                            Aktif dalam organisasi kampus /
-                            Himpunan Mahasiswa
-                        </strong>
-
-                    </div>
-
-                </div>
+                <p>
+                    2025
+                </p>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= ACTIVITY ================= -->
+    <!-- ACTIVITY -->
+    <section id="activity">
 
-<section id="aktivitas">
+        <p class="section-label">02 — BEYOND CAMPUS</p>
 
-    <div class="container">
+        <h2 class="section-title">
+            My Activity
+        </h2>
 
-        <div class="section-heading">
+        <p class="section-description">
+            Selain mengikuti kegiatan perkuliahan, saya aktif
+            mengikuti kegiatan organisasi mahasiswa untuk
+            mengembangkan kemampuan komunikasi, kerja sama,
+            kepemimpinan, dan pengalaman berorganisasi.
+        </p>
 
-            <small>02 — BEYOND ACADEMICS</small>
 
-            <h2>Aktivitas Saya</h2>
+        <div class="activity-box">
+
+            <h3>
+                Himpunan Mahasiswa
+            </h3>
 
             <p>
-                Pengalaman di luar kelas yang membantu saya
-                berkembang sebagai mahasiswa.
+                Berpartisipasi dalam kegiatan Himpunan Mahasiswa
+                dan berbagai aktivitas organisasi di lingkungan
+                kampus sebagai bagian dari pengembangan pengalaman
+                dan kemampuan interpersonal.
             </p>
 
         </div>
 
+    </section>
 
-        <div class="activity-grid">
+
+    <!-- IT FOCUS -->
+    <section id="focus">
+
+        <p class="section-label">03 — IT FOCUS</p>
+
+        <h2 class="section-title">
+            What I Want to Master
+        </h2>
+
+        <p class="section-description">
+            Saya ingin terus mengembangkan kemampuan di bidang
+            teknologi informasi hingga mampu menghasilkan solusi
+            digital yang inovatif dan bermanfaat.
+        </p>
 
 
-            <div class="activity-card">
+        <div class="focus-grid">
 
-                <div class="activity-number">
+            <div class="focus-card">
+
+                <span class="focus-number">
                     01
-                </div>
-
-                <div class="activity-icon">
-                    🤝
-                </div>
-
-                <h3>
-                    Organisasi Kampus
-                </h3>
-
-                <p>
-                    Mengikuti kegiatan Himpunan Mahasiswa
-                    sebagai ruang untuk belajar berorganisasi,
-                    bekerja sama, dan berkontribusi dalam
-                    lingkungan kampus.
-                </p>
-
-            </div>
-
-
-            <div class="activity-card">
-
-                <div class="activity-number">
-                    02
-                </div>
-
-                <div class="activity-icon">
-                    💡
-                </div>
-
-                <h3>
-                    Pengembangan Diri
-                </h3>
-
-                <p>
-                    Terus mempelajari hal-hal baru di bidang
-                    teknologi dan berusaha meningkatkan
-                    kemampuan yang relevan dengan bidang PTIK.
-                </p>
-
-            </div>
-
-
-            <div class="activity-card">
-
-                <div class="activity-number">
-                    03
-                </div>
-
-                <div class="activity-icon">
-                    📚
-                </div>
-
-                <h3>
-                    Belajar Teknologi
-                </h3>
-
-                <p>
-                    Membangun dasar pengetahuan pemrograman,
-                    pengembangan web, dan teknologi pendidikan
-                    sebagai bagian dari perjalanan akademik.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= IT FOCUS ================= -->
-
-<section id="bidang">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <small>03 — IT INTEREST</small>
-
-            <h2>Bidang IT yang Ingin Saya Dalami</h2>
-
-            <p>
-                Fokus keahlian yang ingin saya kembangkan
-                secara bertahap hingga menjadi seorang expert.
-            </p>
-
-        </div>
-
-
-        <div class="it-grid">
-
-
-            <div class="it-card">
-
-                <div class="it-icon">
-                    🌐
-                </div>
+                </span>
 
                 <h3>
                     Web Development
                 </h3>
 
                 <p>
-                    Mendalami pengembangan website mulai dari
-                    HTML, CSS, JavaScript, PHP, database,
-                    hingga pengembangan aplikasi web yang
-                    interaktif dan bermanfaat.
+                    Mempelajari pengembangan website dari sisi
+                    frontend maupun backend serta membangun
+                    pengalaman pengguna yang baik.
                 </p>
-
-                <span class="tag">
-                    WEB TECHNOLOGY
-                </span>
 
             </div>
 
 
-            <div class="it-card">
+            <div class="focus-card">
 
-                <div class="it-icon">
-                    🎓
-                </div>
+                <span class="focus-number">
+                    02
+                </span>
 
                 <h3>
                     Educational Technology
                 </h3>
 
                 <p>
-                    Mempelajari bagaimana teknologi informasi
-                    dapat digunakan untuk menciptakan media,
-                    sistem, dan pengalaman pembelajaran yang
-                    lebih efektif dan inovatif.
+                    Menggabungkan teknologi dengan pendidikan
+                    untuk menciptakan media dan sistem pembelajaran
+                    yang inovatif.
                 </p>
-
-                <span class="tag">
-                    TECHNOLOGY + EDUCATION
-                </span>
 
             </div>
 
 
-            <div class="it-card">
+            <div class="focus-card">
 
-                <div class="it-icon">
-                    🤖
-                </div>
+                <span class="focus-number">
+                    03
+                </span>
 
                 <h3>
                     Artificial Intelligence
                 </h3>
 
                 <p>
-                    Ingin memahami perkembangan AI serta
-                    mengeksplorasi penerapannya untuk membantu
-                    proses pembelajaran dan pengembangan
-                    teknologi pendidikan.
+                    Mempelajari perkembangan kecerdasan buatan
+                    dan potensinya dalam membantu menyelesaikan
+                    berbagai permasalahan di dunia pendidikan.
                 </p>
-
-                <span class="tag">
-                    AI & INNOVATION
-                </span>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ================= ROADMAP ================= -->
+    <!-- GOAL -->
+    <section id="goal">
 
-<section>
+        <div class="goal">
 
-    <div class="container">
+            <p class="section-label">
+                04 — FUTURE GOAL
+            </p>
 
-        <div class="section-heading">
-
-            <small>04 — MY ROADMAP</small>
-
-            <h2>Perjalanan Menuju Tujuan</h2>
+            <h2>
+                Becoming a
+                <span>PTIK Lecturer.</span>
+            </h2>
 
             <p>
-                Langkah yang ingin saya bangun untuk
-                mengembangkan diri di bidang teknologi dan pendidikan.
+                Cita-cita saya adalah menjadi dosen di bidang
+                Pendidikan Teknik Informatika dan Komputer UNNES.
+                Saya ingin tidak hanya menguasai teknologi,
+                tetapi juga mampu membagikan ilmu dan pengalaman
+                tersebut kepada generasi berikutnya.
             </p>
 
         </div>
 
-
-        <div class="roadmap">
-
-
-            <div class="roadmap-item">
-
-                <span>STEP 01</span>
-
-                <h3>
-                    Strengthen Foundation
-                </h3>
-
-                <p>
-                    Memperkuat dasar pemrograman,
-                    jaringan, database, dan konsep
-                    teknologi informasi.
-                </p>
-
-            </div>
+    </section>
 
 
-            <div class="roadmap-item">
+    <!-- FOOTER -->
+    <footer>
 
-                <span>STEP 02</span>
+        © 2026
+        <span>Tieska Mirfatus Sholekah</span>
+        — PTIK UNNES
 
-                <h3>
-                    Build & Explore
-                </h3>
-
-                <p>
-                    Mengembangkan berbagai proyek
-                    dan mengeksplorasi Web Development
-                    serta teknologi pendidikan.
-                </p>
-
-            </div>
-
-
-            <div class="roadmap-item">
-
-                <span>STEP 03</span>
-
-                <h3>
-                    Research & Innovate
-                </h3>
-
-                <p>
-                    Mengembangkan kemampuan penelitian
-                    dan menghasilkan inovasi teknologi
-                    yang bermanfaat.
-                </p>
-
-            </div>
-
-
-            <div class="roadmap-item">
-
-                <span>STEP 04</span>
-
-                <h3>
-                    Become an Expert
-                </h3>
-
-                <p>
-                    Menjadi seorang ahli yang mampu
-                    menggabungkan teknologi dengan
-                    kebutuhan dunia pendidikan.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FUTURE GOAL ================= -->
-
-<section id="cita-cita">
-
-    <div class="container">
-
-        <div class="future">
-
-            <div class="section-heading">
-
-                <small>05 — FUTURE GOAL</small>
-
-                <h2>
-                    Saya Ingin Menjadi Dosen PTIK UNNES.
-                </h2>
-
-            </div>
-
-
-            <p>
-
-                Saya memiliki cita-cita untuk menjadi dosen
-                Pendidikan Teknik Informatika dan Komputer
-                di Universitas Negeri Semarang.
-
-                <br><br>
-
-                Untuk mencapai tujuan tersebut, saya ingin
-                terus mengembangkan kemampuan akademik,
-                organisasi, pemrograman, penelitian, serta
-                memperdalam bidang Web Development dan
-                Teknologi Pendidikan hingga menjadi seorang
-                expert.
-
-                <br><br>
-
-                Saya berharap ilmu dan kemampuan yang saya
-                kembangkan nantinya tidak hanya bermanfaat
-                untuk diri sendiri, tetapi juga dapat
-                digunakan untuk membantu generasi berikutnya
-                dalam memahami dan memanfaatkan teknologi.
-
-            </p>
-
-
-            <div class="quote">
-
-                “Technology becomes more meaningful when
-                it can create knowledge, opportunity, and
-                positive impact.”
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <p>
-        © 2026 <strong>Tieska Mirfatus Sholekah</strong>
-    </p>
-
-    <p>
-        Pendidikan Teknik Informatika dan Komputer • UNNES
-    </p>
-
-</footer>
-
+    </footer>
 
 </body>
 </html>
