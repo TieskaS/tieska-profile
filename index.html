@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tieska Mirfatus Sholekah | PTIK UNNES</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8ff;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid #e5ebf5;
+        }
+
+        .nav-container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2463d4;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #344054;
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2463d4;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 120px 24px 70px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #eef5ff, #ffffff, #eaf8ff);
+        }
+
+        .hero-container {
+            max-width: 1050px;
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #e5f0ff;
+            color: #2463d4;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            color: #2463d4;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #5c6678;
+            max-width: 650px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 13px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .primary {
+            background: #2463d4;
+            color: white;
+        }
+
+        .secondary {
+            background: white;
+            color: #344054;
+            border: 1px solid #cdd8e8;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 35px;
+            border-radius: 28px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(38,77,125,0.12);
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2463d4, #59b7e8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 90px 24px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #2463d4;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-top: 8px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e1e8f2;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(38,77,125,0.06);
+        }
+
+        .info {
+            display: grid;
+            gap: 15px;
+        }
+
+        .info div {
+            padding: 14px 16px;
+            background: #f6f9fd;
+            border-radius: 12px;
+        }
+
+        .info strong {
+            display: block;
+            color: #2463d4;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .info span {
+            font-weight: 600;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(38,77,125,0.06);
+        }
+
+        .skill .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .career {
+            background: #172b4d;
+            color: white;
+            border-radius: 28px;
+            padding: 45px;
+        }
+
+        .career h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .career p {
+            color: #dce6f5;
+        }
+
+        footer {
+            background: #10213b;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 30px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 760px) {
+            nav a {
+                display: none;
+            }
+
+            .hero-container,
+            .about-grid,
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">TMS.</div>
+
+            <div>
+                <a href="#profil">Profil</a>
+                <a href="#tentang">Tentang</a>
+                <a href="#fokus">Bidang IT</a>
+                <a href="#cita-cita">Cita-Cita</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="profil">
+        <div class="hero-container">
+
+            <div>
+                <div class="badge">
+                    MAHASISWA PTIK • UNNES
+                </div>
+
+                <h1>
+                    Halo, saya<br>
+                    <span>Tieska Mirfatus Sholekah.</span>
+                </h1>
+
+                <p>
+                    Mahasiswa Pendidikan Teknik Informatika dan Komputer
+                    yang tertarik mengembangkan teknologi digital untuk
+                    mendukung dunia pendidikan.
+                </p>
+
+                <a href="#tentang" class="button primary">
+                    Kenali Saya
+                </a>
+
+                <a href="#fokus" class="button secondary">
+                    Bidang IT Saya
+                </a>
+            </div>
+
+            <div class="profile-card">
+
+                <div class="avatar">
+                    TM
+                </div>
+
+                <h2>
+                    Tieska Mirfatus Sholekah
+                </h2>
+
+                <p>
+                    PTIK • Universitas Negeri Semarang
+                </p>
+
+                <p>
+                    Angkatan 2025
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="tentang">
+
+        <div class="container">
+
+            <div class="section-title">
+                <small>ABOUT ME</small>
+                <h2>Profil Singkat</h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="card">
+
+                    <p>
+                        Saya adalah mahasiswa Program Studi Pendidikan
+                        Teknik Informatika dan Komputer (PTIK)
+                        Universitas Negeri Semarang angkatan 2025.
+                        Selain menjalani perkuliahan, saya aktif mengikuti
+                        kegiatan organisasi di kampus, khususnya Himpunan
+                        Mahasiswa.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Bagi saya, teknologi bukan hanya tentang membuat
+                        sebuah sistem, tetapi juga tentang bagaimana
+                        teknologi dapat memberikan manfaat dan membantu
+                        menyelesaikan permasalahan di dunia pendidikan.
+                    </p>
+
+                </div>
+
+
+                <div class="card info">
+
+                    <div>
+                        <strong>Nama</strong>
+                        <span>Tieska Mirfatus Sholekah</span>
+                    </div>
+
+                    <div>
+                        <strong>NIM</strong>
+                        <span>2505090007</span>
+                    </div>
+
+                    <div>
+                        <strong>Program Studi</strong>
+                        <span>
+                            Pendidikan Teknik Informatika dan Komputer
+                        </span>
+                    </div>
+
+                    <div>
+                        <strong>Tahun Angkatan</strong>
+                        <span>2025</span>
+                    </div>
+
+                    <div>
+                        <strong>Kesibukan</strong>
+                        <span>
+                            Aktif dalam organisasi kampus /
+                            Himpunan Mahasiswa
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="fokus">
+
+        <div class="container">
+
+            <div class="section-title">
+                <small>MY IT FOCUS</small>
+                <h2>Bidang IT yang Ingin Saya Dalami</h2>
+            </div>
+
+            <div class="skills">
+
+                <div class="skill">
+
+                    <div class="icon">🌐</div>
+
+                    <h3>
+                        Web Development
+                    </h3>
+
+                    <p>
+                        Mendalami HTML, CSS, JavaScript, PHP,
+                        database, serta pengembangan aplikasi web
+                        yang interaktif.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="icon">🎓</div>
+
+                    <h3>
+                        Teknologi Pendidikan
+                    </h3>
+
+                    <p>
+                        Mengembangkan pemanfaatan teknologi digital
+                        untuk menciptakan proses pembelajaran yang
+                        lebih efektif dan inovatif.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <div class="icon">🤖</div>
+
+                    <h3>
+                        Artificial Intelligence
+                    </h3>
+
+                    <p>
+                        Mempelajari AI dan penerapannya dalam
+                        pendidikan untuk mendukung pembelajaran
+                        dan pengembangan sistem cerdas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="cita-cita">
+
+        <div class="container">
+
+            <div class="career">
+
+                <h2>
+                    My Future Goal 🚀
+                </h2>
+
+                <p>
+                    Saya bercita-cita menjadi
+                    <strong>
+                        dosen Pendidikan Teknik Informatika
+                        dan Komputer di Universitas Negeri Semarang
+                    </strong>.
+                    Untuk mencapai tujuan tersebut, saya ingin terus
+                    meningkatkan kemampuan akademik, organisasi,
+                    pemrograman, penelitian, serta mengembangkan
+                    keahlian di bidang Web Development dan Teknologi
+                    Pendidikan hingga menjadi seorang expert yang mampu
+                    menghasilkan teknologi yang bermanfaat bagi dunia
+                    pendidikan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        © 2026 Tieska Mirfatus Sholekah
+        • Pendidikan Teknik Informatika dan Komputer
+        • UNNES
+
+    </footer>
+
+</body>
+</html>
